@@ -1,2 +1,4 @@
-# myscore_parser
-Parser for site http://myscore.ua/
+Parse football statistic from [myscore.ua](http://myscore.ua/)
+==============================================================
+
+[![Python version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
