@@ -33,7 +33,8 @@ def get_tournament_matches(tournament_info_page):
         for row in all_transfers:
             cells = row.find_all('td')
             if is_start_new_tournament(cells[0].get_text()):
-                tournaments += matches
+                if matches:
+                    tournaments.append(matches)
                 matches = []
                 continue
 
@@ -48,6 +49,6 @@ def get_tournament_matches(tournament_info_page):
         print(e)
         return
 
-    tournaments += matches
+    tournaments.append(matches)
     return tournaments
 
