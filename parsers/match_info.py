@@ -49,3 +49,10 @@ def convert_player_ids_to_url(player_ids):
         result_list.append(url)
 
     return result_list
+
+
+def get_referee_info(match_soup):
+    match_info = match_soup.find('div', templates.match_info)
+    match_info_content = match_info.find_all('div', templates.match_info_content)
+    full_name = match_info_content[0].get_text().split()
+    return full_name[2], full_name[1]
