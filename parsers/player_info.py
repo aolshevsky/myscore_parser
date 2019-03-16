@@ -19,7 +19,7 @@ def parse_player_info_birthday(player_info):
 def parse_player_info_fullname(player_info):
     player_name = player_info.find('div', templates.player_info_fullname).get_text()
     full_name = player_name.split('(')[0].split()
-    f_name, l_name = full_name[-1], full_name[0]
+    f_name, l_name = ' '.join(full_name[1:]), full_name[0]
     return f_name, l_name
 
 
@@ -29,6 +29,7 @@ def parse_transfer_team_name(team_name):
 
 def get_player_transfers(player_info_page):
     transfers = []
+    transfer_names = ['Date', 'Team_From', 'Team_To', 'Transfer_Type']
     try:
         all_transfers = player_info_page.find('table', templates.player_info_transfer_table).find('tbody').find_all('tr')
 
@@ -38,10 +39,11 @@ def get_player_transfers(player_info_page):
             team_from = parse_transfer_team_name(cells[1].get_text())
             team_to = parse_transfer_team_name(cells[2].get_text())
             transfer_type = cells[3].get_text()
-            transfers.append([
-                date, team_from, team_to, transfer_type])
+            transfers.append(dict(zip(transfer_names, [date, team_from, team_to, transfer_type])))
+
     except BaseException as e:
         print(e)
+        return
     return transfers
 
 

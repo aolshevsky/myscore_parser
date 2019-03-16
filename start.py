@@ -1,11 +1,9 @@
 from myscore_parser import templates
-from myscore_parser.parsers import player_info
+from myscore_parser.parsers import player_info, match_info
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
-import requests
 from time import sleep
-import re
 
 
 def connect():
@@ -19,63 +17,14 @@ def load_data_by_url(url, driver):
     return driver.page_source
 
 
-def parse_match_time(time):
-    time = time[:-1]
-    if re.match('\d{2,3}\+\d', time):
-        add_time = time.split('+')
-        return int(add_time[0]) + int(add_time[1])
-    return int(time)
-
-
-def get_substitution_name(element):
-    substitution = element.find_all('span', templates.period_row_substitution_name)
-    player_ids = []
-    for sub in substitution:
-        if sub['class'][0] == 'substitution-out-name':
-            print("Игрок: {player} ушел с поля".format(player=sub.get_text()))
-        else:
-            print("Игрок: {player} вышел на поле".format(player=sub.get_text()))
-        player_ids += get_participant_id(sub)
-
-    return player_ids
-
-
-def get_participant_name(element):
-    player_name = element.find('span', templates.period_row_participant_name)
-    if player_name:
-        return get_participant_id(player_name)
-
-    return []
-
-
-def get_participant_id(soup):
-    player_id_regex = re.compile('/[\S]*/')
-    return player_id_regex.findall(soup.find('a')['onclick'])
-
-
-def convert_player_ids_to_url(player_ids):
-    result_list = []
-
-    for player_id in player_ids:
-
-        url = '{}{}'.format(
-            templates.BASE_URL,
-            player_id
-        )
-
-        result_list.append(url)
-
-    return result_list
-
-
-def get_player_info_page(url, driver):
+def get_soup_page_by_url(url, driver):
     return BeautifulSoup(load_data_by_url(url, driver), "html.parser")
 
 
 def main():
     driver = connect()
     url = 'https://www.myscore.com.ua/match/27JsGrvC/#match-summary'
-    match_soup = BeautifulSoup(load_data_by_url(url, driver), "html.parser")
+    match_soup = get_soup_page_by_url(url, driver)
 
     # try:
     #     element = driver.find_element_by_xpath("//span[@class='participant-name']")
@@ -90,20 +39,18 @@ def main():
         print("Тайм: " + t.text)
 
     for ev in match_data.find_all('div', templates.period_row):
-        # print("OP:", ev.text)
         player_ids = []
 
-        print("Время: {time} мин".format(time=parse_match_time(ev.find('div', templates.period_row_time).text)))
+        print("Время: {time} мин".format(time=match_info.parse_match_time(ev.find('div', templates.period_row_time).text)))
 
         soccer_ball = ev.find('div', templates.period_row_soccer_ball)
         y_card = ev.find('div', templates.period_row_y_card)
         sub_incident = ev.find('span', templates.period_row_sub_incident_name)
-        player_ids += get_substitution_name(ev)
-        player_ids += get_participant_name(ev)
+        player_ids += match_info.get_substitution_name(ev)
+        player_ids += match_info.get_participant_name(ev)
 
-        # print(convert_player_ids_to_url(player_ids))
-        for p_url in convert_player_ids_to_url(player_ids):
-            player_info_page = get_player_info_page(p_url, driver)
+        for p_url in match_info.convert_player_ids_to_url(player_ids):
+            player_info_page = get_soup_page_by_url(p_url, driver)
             player_info.get_player_info(player_info_page)
             print(player_info.get_player_transfers(player_info_page))
 
