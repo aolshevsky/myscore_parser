@@ -41,9 +41,7 @@ def get_player_transfers(player_info_page):
             transfer_type = cells[3].get_text()
             transfers.append(dict(zip(transfer_names, [date, team_from, team_to, transfer_type])))
 
-    except BaseException as e:
-        print(e)
+    except:
         return
+
     return transfers
-
-
