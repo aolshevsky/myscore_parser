@@ -1,3 +1,5 @@
+BASE_URL = 'http://www.myscore.com.ua'
+
 periods_block = {'class': 'detailMS'}
 periods_headers = {'class': 'detailMS__headerText'}
 period_row = {'class': 'detailMS__incidentRow'}
@@ -7,3 +9,12 @@ period_row_substitution_name = {'class': ['substitution-in-name', 'substitution-
 period_row_participant_name = {'class': 'participant-name'}
 period_row_soccer_ball = {'class': 'soccer-ball'}
 period_row_sub_incident_name = {'class': 'subincident-name'}
+
+player_info_block = {'class': 'player-info'}
+player_info_fullname = {'class': 'team-name'}
+player_info_country = {'class': 'player-country'}
+player_info_birthdate = {'class': 'player-birthdate'}
+player_info_type_name = {'class': 'player-type-name'}
+
+player_info_transfer_table = {'class': 'transfer-table'}
+
