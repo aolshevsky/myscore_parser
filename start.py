@@ -48,7 +48,7 @@ def main():
 
     tournament_soup = bot.get_page_soup()
 
-    print(*tournament_info.get_tournament_matches(bot, tournament_soup), sep='\n')
+    print(*tournament_info.get_tournament_matches(bot, tournament_soup, 1), sep='\n')
 
     bot.driver.quit()
 
