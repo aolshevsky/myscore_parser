@@ -3,6 +3,8 @@ BASE_URL = 'http://www.myscore.com.ua'
 tournament_info = {'class', 'tournament-page'}
 tournament_info_get_more_matches = "//table[@class='link-more-games']/tbody/tr/td/a"
 
+# tournament_info_get_more_matches_1 = "//table[@class='soccer']/tbody/tr[@class='odd stage-finished']"
+
 match_info = {'class': 'match-information-data'}
 match_info_content = {'class', 'content'}
 

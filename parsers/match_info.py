@@ -1,6 +1,7 @@
 from myscore_parser import templates
-from myscore_parser.start import Bot
+from myscore_parser import start
 from myscore_parser.parsers import player_info
+from bs4 import BeautifulSoup
 import re
 
 
@@ -60,43 +61,60 @@ def get_referee_info(match_soup):
     return full_name[2], full_name[1]
 
 
-def get_match_info():
+def get_match_info(bot):
+    # match_url = 'https://www.myscore.com.ua/match/EezaGZxc/#match-summary'
+    # bot = Bot(match_url)
+    try:
+        match_soup = bot.get_page_source_by_new_url(bot.driver.current_url)
+
+        print(bot.driver.current_url)
+        match_data = match_soup.find('div', templates.periods_block)
+
+        referee_full_name = get_referee_info(match_soup)
+        print("Судья: {referee[1]} {referee[0]}".format(referee=referee_full_name))
+
+        for t in match_data.find_all('div', templates.periods_headers):
+            print("Тайм: " + t.text)
+
+        for ev in match_data.find_all('div', templates.period_row):
+            player_ids = []
+
+            print("Время: {time} мин".format(time=parse_match_time(ev.find('div', templates.period_row_time).text)))
+
+            soccer_ball = ev.find('div', templates.period_row_soccer_ball)
+            y_card = ev.find('div', templates.period_row_y_card)
+            r_card = ev.find('div', templates.period_row_r_card)
+            sub_incident = ev.find('span', templates.period_row_sub_incident_name)
+            player_ids += get_substitution_name(ev)
+            player_ids += get_participant_name(ev)
+
+            for p_url in convert_player_ids_to_url(player_ids):
+                player_info_page = bot.get_page_source_by_new_url(p_url)
+                player_info.get_player_info(player_info_page)
+                print(player_info.get_player_transfers(player_info_page))
+
+            if y_card:
+                print("Желтая карточка")
+            if r_card:
+                print("Красная карточка")
+            if soccer_ball:
+                print("Гооол!")
+            if sub_incident:
+                incident = sub_incident.get_text()[1:-1]
+                print("Инцидент: {incident}".format(incident=incident))
+            print()
+
+    except BaseException as e:
+        print(e)
+
+    # bot.driver.quit()
+
+
+def main():
     match_url = 'https://www.myscore.com.ua/match/EezaGZxc/#match-summary'
-    bot = Bot(match_url)
-    match_soup = bot.get_page_source()
+    bot = start.Bot(match_url)
+    get_match_info(bot)
 
-    match_data = match_soup.find('div', templates.periods_block)
 
-    referee_full_name = get_referee_info(match_soup)
-    print("Судья: {referee[1]} {referee[0]}".format(referee=referee_full_name))
-
-    for t in match_data.find_all('div', templates.periods_headers):
-        print("Тайм: " + t.text)
-
-    for ev in match_data.find_all('div', templates.period_row):
-        player_ids = []
-
-        print("Время: {time} мин".format(time=parse_match_time(ev.find('div', templates.period_row_time).text)))
-
-        soccer_ball = ev.find('div', templates.period_row_soccer_ball)
-        y_card = ev.find('div', templates.period_row_y_card)
-        r_card = ev.find('div', templates.period_row_r_card)
-        sub_incident = ev.find('span', templates.period_row_sub_incident_name)
-        player_ids += get_substitution_name(ev)
-        player_ids += get_participant_name(ev)
-
-        for p_url in convert_player_ids_to_url(player_ids):
-            player_info_page = bot.get_page_source(p_url)
-            player_info.get_player_info(player_info_page)
-            print(player_info.get_player_transfers(player_info_page))
-
-        if y_card:
-            print("Желтая карточка")
-        if r_card:
-            print("Красная карточка")
-        if soccer_ball:
-            print("Гооол!")
-        if sub_incident:
-            incident = sub_incident.get_text()[1:-1]
-            print("Инцидент: {incident}".format(incident=incident))
-        print()
+if __name__ == '__main__':
+    main()

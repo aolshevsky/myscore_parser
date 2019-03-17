@@ -1,5 +1,5 @@
 from myscore_parser import templates
-from myscore_parser.parsers import player_info, match_info, tournament_info
+from myscore_parser.parsers import tournament_info
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from time import sleep
@@ -10,20 +10,18 @@ class Bot:
         self.driver = webdriver.Chrome("chromedriver")
         self.url = url
         self.navigate()
+        self.window_handle = self.driver.window_handles[-1]
 
     def navigate(self):
         self.driver.get(self.url)
 
-    def get_page_source(self):
-        return self.driver.page_source
+    def get_page_soup(self):
+        return BeautifulSoup(self.driver.page_source, "html.parser")
 
     def get_page_source_by_new_url(self, url):
         prev_url, self.url = self.url, url
         self.navigate()
-        return self.get_page_source()
-
-    def quit_driver(self):
-        self.driver.quit()
+        return self.get_page_soup()
 
 
 def load_data_by_url(url, driver):
@@ -48,11 +46,11 @@ def main():
         except:
             break
 
-    tournament_soup = BeautifulSoup(bot.driver.page_source, "html.parser")
+    tournament_soup = bot.get_page_soup()
 
-    print(*tournament_info.get_tournament_matches(tournament_soup), sep='\n')
+    print(*tournament_info.get_tournament_matches(bot, tournament_soup), sep='\n')
 
-    bot.quit_driver()
+    bot.driver.quit()
 
 
 if __name__ == '__main__':
