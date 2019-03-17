@@ -1,0 +1,963 @@
+[
+    {
+        "Period": "1-й тайм",
+        "Time": 4,
+        "Event_Type": "Подножка",
+        "Card_Type": "Красная карточка",
+        "Player": {
+            "First_Name": "Магуайр",
+            "Last_Name": "Хари",
+            "Country": "Англия",
+            "Type": "Защитник",
+            "Birthday": "05.03.1993",
+            "Transfers": [
+                {
+                    "Date": "01.07.2017",
+                    "Team_From": "Халл",
+                    "Team_To": "Лестер",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "31.05.2015",
+                    "Team_From": "Уиган",
+                    "Team_To": "Халл",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "10.02.2015",
+                    "Team_From": "Халл",
+                    "Team_To": "Уиган",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "29.07.2014",
+                    "Team_From": "Шеффилд Юнайтед",
+                    "Team_To": "Халл",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2009",
+                    "Team_From": "Барнсли",
+                    "Team_To": "Шеффилд Юнайтед",
+                    "Transfer_Type": "?"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "1-й тайм",
+        "Time": 6,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Грей",
+                    "Last_Name": "Демарай",
+                    "Country": "Англия",
+                    "Type": "Полузащитник",
+                    "Birthday": "28.06.1996",
+                    "Transfers": [
+                        {
+                            "Date": "04.01.2016",
+                            "Team_From": "Бирмингем",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Морган",
+                    "Last_Name": "Уэс",
+                    "Country": "Ямайка",
+                    "Type": "Защитник",
+                    "Birthday": "21.01.1984",
+                    "Transfers": [
+                        {
+                            "Date": "30.01.2012",
+                            "Team_From": "Ноттингем Форест",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.05.2003",
+                            "Team_From": "Киддерминстер",
+                            "Team_To": "Ноттингем Форест",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.02.2003",
+                            "Team_From": "Ноттингем Форест",
+                            "Team_To": "Киддерминстер",
+                            "Transfer_Type": "Аренда"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "1-й тайм",
+        "Time": 33,
+        "Event_Type": "Гол",
+        "Player": {
+            "First_Name": "Maddison",
+            "Last_Name": "Джеймс",
+            "Country": "Англия",
+            "Type": "Полузащитник",
+            "Birthday": "23.11.1996",
+            "Transfers": [
+                {
+                    "Date": "01.07.2018",
+                    "Team_From": "Норвич",
+                    "Team_To": "Лестер",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.01.2017",
+                    "Team_From": "Абердин",
+                    "Team_To": "Норвич",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "01.09.2016",
+                    "Team_From": "Норвич",
+                    "Team_To": "Абердин",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "31.05.2016",
+                    "Team_From": "Ковентри Сити",
+                    "Team_To": "Норвич",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "02.02.2016",
+                    "Team_From": "Норвич",
+                    "Team_To": "Ковентри Сити",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "01.02.2016",
+                    "Team_From": "Ковентри Сити",
+                    "Team_To": "Норвич",
+                    "Transfer_Type": "Покупка"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "1-й тайм",
+        "Time": 34,
+        "Event_Type": "Неспортивное поведение",
+        "Card_Type": "Желтая карточка",
+        "Player": {
+            "First_Name": "Maddison",
+            "Last_Name": "Джеймс",
+            "Country": "Англия",
+            "Type": "Полузащитник",
+            "Birthday": "23.11.1996",
+            "Transfers": [
+                {
+                    "Date": "01.07.2018",
+                    "Team_From": "Норвич",
+                    "Team_To": "Лестер",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.01.2017",
+                    "Team_From": "Абердин",
+                    "Team_To": "Норвич",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "01.09.2016",
+                    "Team_From": "Норвич",
+                    "Team_To": "Абердин",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "31.05.2016",
+                    "Team_From": "Ковентри Сити",
+                    "Team_To": "Норвич",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "02.02.2016",
+                    "Team_From": "Норвич",
+                    "Team_To": "Ковентри Сити",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "01.02.2016",
+                    "Team_From": "Ковентри Сити",
+                    "Team_To": "Норвич",
+                    "Transfer_Type": "Покупка"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "1-й тайм",
+        "Time": 36,
+        "Event_Type": "Подножка",
+        "Card_Type": "Желтая карточка",
+        "Player": {
+            "First_Name": "Бардсли",
+            "Last_Name": "Филлип",
+            "Country": "Шотландия",
+            "Type": "Защитник",
+            "Birthday": "28.06.1985",
+            "Transfers": [
+                {
+                    "Date": "26.07.2017",
+                    "Team_From": "Сток Сити",
+                    "Team_To": "Бёрнли",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2014",
+                    "Team_From": "Сандерленд",
+                    "Team_To": "Сток Сити",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "22.01.2008",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Сандерленд",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "02.01.2008",
+                    "Team_From": "Шеффилд Юнайтед",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "15.10.2007",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Шеффилд Юнайтед",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "29.04.2007",
+                    "Team_From": "Астон Вилла",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "08.01.2007",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Астон Вилла",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "28.12.2006",
+                    "Team_From": "Рейнджерс",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "16.08.2006",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Рейнджерс",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "01.05.2006",
+                    "Team_From": "Бёрнли",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "16.03.2006",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Бёрнли",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "18.05.2004",
+                    "Team_From": "Антверпен",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "30.01.2004",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Антверпен",
+                    "Transfer_Type": "Аренда"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "1-й тайм",
+        "Time": 38,
+        "Event_Type": "Гол",
+        "Player": {
+            "First_Name": "McNeil",
+            "Last_Name": "Дуайт",
+            "Country": "Англия",
+            "Type": "Нападающий",
+            "Birthday": "22.11.1999",
+            "Transfers": null
+        }
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 64,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Maddison",
+                    "Last_Name": "Джеймс",
+                    "Country": "Англия",
+                    "Type": "Полузащитник",
+                    "Birthday": "23.11.1996",
+                    "Transfers": [
+                        {
+                            "Date": "01.07.2018",
+                            "Team_From": "Норвич",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.01.2017",
+                            "Team_From": "Абердин",
+                            "Team_To": "Норвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.09.2016",
+                            "Team_From": "Норвич",
+                            "Team_To": "Абердин",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "31.05.2016",
+                            "Team_From": "Ковентри Сити",
+                            "Team_To": "Норвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "02.02.2016",
+                            "Team_From": "Норвич",
+                            "Team_To": "Ковентри Сити",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.02.2016",
+                            "Team_From": "Ковентри Сити",
+                            "Team_To": "Норвич",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Фукс",
+                    "Last_Name": "Кристиан",
+                    "Country": "Австрия",
+                    "Type": "Защитник",
+                    "Birthday": "07.04.1986",
+                    "Transfers": [
+                        {
+                            "Date": "01.07.2015",
+                            "Team_From": "Шальке",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Свободный агент"
+                        },
+                        {
+                            "Date": "02.07.2011",
+                            "Team_From": "Майнц",
+                            "Team_To": "Шальке",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2011",
+                            "Team_From": "Бохум",
+                            "Team_To": "Майнц",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "30.06.2011",
+                            "Team_From": "Майнц",
+                            "Team_To": "Бохум",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "19.07.2010",
+                            "Team_From": "Бохум",
+                            "Team_To": "Майнц",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.07.2008",
+                            "Team_From": "Маттерсбург",
+                            "Team_To": "Бохум",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2003",
+                            "Team_From": "Нойштадт",
+                            "Team_To": "Маттерсбург",
+                            "Transfer_Type": "Свободный агент"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 70,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Вуд",
+                    "Last_Name": "Крис",
+                    "Country": "Новая Зеландия",
+                    "Type": "Нападающий",
+                    "Birthday": "07.12.1991",
+                    "Transfers": [
+                        {
+                            "Date": "21.08.2017",
+                            "Team_From": "Лидс",
+                            "Team_To": "Бёрнли",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2015",
+                            "Team_From": "Лестер",
+                            "Team_To": "Лидс",
+                            "Transfer_Type": "?"
+                        },
+                        {
+                            "Date": "24.04.2015",
+                            "Team_From": "Ипсвич Таун",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "27.02.2015",
+                            "Team_From": "Лестер",
+                            "Team_To": "Ипсвич Таун",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.01.2013",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "28.12.2012",
+                            "Team_From": "Миллуол",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "17.09.2012",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Миллуол",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.05.2012",
+                            "Team_From": "Бристоль Сити",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "12.01.2012",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Бристоль Сити",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "03.01.2012",
+                            "Team_From": "Бирмингем",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "05.08.2011",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Бирмингем",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "31.05.2011",
+                            "Team_From": "Брайтон",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "19.11.2010",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Брайтон",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "14.11.2010",
+                            "Team_From": "Барнсли",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "23.09.2010",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Барнсли",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.07.2008",
+                            "Team_From": "ВайБОП",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Свободный агент"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Крауч",
+                    "Last_Name": "Питер",
+                    "Country": "Англия",
+                    "Type": "Нападающий",
+                    "Birthday": "30.01.1981",
+                    "Transfers": [
+                        {
+                            "Date": "31.01.2019",
+                            "Team_From": "Сток Сити",
+                            "Team_To": "Бёрнли",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "31.08.2011",
+                            "Team_From": "Тоттенхэм",
+                            "Team_To": "Сток Сити",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "27.07.2009",
+                            "Team_From": "Портсмут",
+                            "Team_To": "Тоттенхэм",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "11.07.2008",
+                            "Team_From": "Ливерпуль",
+                            "Team_To": "Портсмут",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "20.07.2005",
+                            "Team_From": "Саутгемптон",
+                            "Team_To": "Ливерпуль",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "09.07.2004",
+                            "Team_From": "Астон Вилла",
+                            "Team_To": "Саутгемптон",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "07.12.2003",
+                            "Team_From": "Норвич",
+                            "Team_To": "Астон Вилла",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "04.09.2003",
+                            "Team_From": "Астон Вилла",
+                            "Team_To": "Норвич",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "27.03.2002",
+                            "Team_From": "Портсмут",
+                            "Team_To": "Астон Вилла",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.08.2001",
+                            "Team_From": "КПР",
+                            "Team_To": "Портсмут",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "27.07.2000",
+                            "Team_From": "Тоттенхэм",
+                            "Team_To": "КПР",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.05.2000",
+                            "Team_From": "Хесслехольм",
+                            "Team_To": "Тоттенхэм",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.03.2000",
+                            "Team_From": "Тоттенхэм",
+                            "Team_To": "Хесслехольм",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.02.2000",
+                            "Team_From": "Далвич Гамлет",
+                            "Team_To": "Тоттенхэм",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.01.2000",
+                            "Team_From": "Тоттенхэм",
+                            "Team_To": "Далвич Гамлет",
+                            "Transfer_Type": "Аренда"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 77,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Barnes",
+                    "Last_Name": "Harvey",
+                    "Country": "Англия",
+                    "Type": "Полузащитник",
+                    "Birthday": "09.12.1997",
+                    "Transfers": [
+                        {
+                            "Date": "11.01.2019",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "24.07.2018",
+                            "Team_From": "Лестер",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.01.2018",
+                            "Team_From": "Барнсли",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "11.08.2017",
+                            "Team_From": "Лестер",
+                            "Team_To": "Барнсли",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.07.2017",
+                            "Team_From": "Милтон Кинс",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "20.01.2017",
+                            "Team_From": "Лестер",
+                            "Team_To": "Милтон Кинс",
+                            "Transfer_Type": "Аренда"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Менди",
+                    "Last_Name": "Нампалис",
+                    "Country": "Франция",
+                    "Type": "Защитник",
+                    "Birthday": "23.06.1992",
+                    "Transfers": [
+                        {
+                            "Date": "30.06.2018",
+                            "Team_From": "Ницца",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "31.08.2017",
+                            "Team_From": "Лестер",
+                            "Team_To": "Ницца",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "03.07.2016",
+                            "Team_From": "Ницца",
+                            "Team_To": "Лестер",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2013",
+                            "Team_From": "Монако",
+                            "Team_To": "Ницца",
+                            "Transfer_Type": "Свободный агент"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 79,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Гудмундссон",
+                    "Last_Name": "Йоханн",
+                    "Country": "Исландия",
+                    "Type": "Нападающий",
+                    "Birthday": "27.10.1990",
+                    "Transfers": [
+                        {
+                            "Date": "19.07.2016",
+                            "Team_From": "Чарльтон",
+                            "Team_To": "Бёрнли",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "11.07.2014",
+                            "Team_From": "АЗ Алкмар",
+                            "Team_To": "Чарльтон",
+                            "Transfer_Type": "Свободный агент"
+                        },
+                        {
+                            "Date": "28.01.2009",
+                            "Team_From": "Брейдаблик",
+                            "Team_To": "АЗ Алкмар",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2007",
+                            "Team_From": "Фулхэм",
+                            "Team_To": "Брейдаблик",
+                            "Transfer_Type": "Свободный агент"
+                        },
+                        {
+                            "Date": "01.07.2006",
+                            "Team_From": "Челси",
+                            "Team_To": "Фулхэм",
+                            "Transfer_Type": "Свободный агент"
+                        },
+                        {
+                            "Date": "01.01.2006",
+                            "Team_From": "Брейдаблик",
+                            "Team_To": "Челси",
+                            "Transfer_Type": "Свободный агент"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Брэйди",
+                    "Last_Name": "Робби",
+                    "Country": "Ирландия",
+                    "Type": "Полузащитник",
+                    "Birthday": "14.01.1992",
+                    "Transfers": [
+                        {
+                            "Date": "31.01.2017",
+                            "Team_From": "Норвич",
+                            "Team_To": "Бёрнли",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "29.07.2015",
+                            "Team_From": "Халл",
+                            "Team_To": "Норвич",
+                            "Transfer_Type": "?"
+                        },
+                        {
+                            "Date": "08.01.2013",
+                            "Team_From": "Манчестер Юнайтед",
+                            "Team_To": "Халл",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "07.01.2013",
+                            "Team_From": "Халл",
+                            "Team_To": "Манчестер Юнайтед",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "05.11.2012",
+                            "Team_From": "Манчестер Юнайтед",
+                            "Team_To": "Халл",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.05.2012",
+                            "Team_From": "Халл",
+                            "Team_To": "Манчестер Юнайтед",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.08.2011",
+                            "Team_From": "Манчестер Юнайтед",
+                            "Team_To": "Халл",
+                            "Transfer_Type": "Аренда"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 90,
+        "Event_Type": "Гол",
+        "Player": {
+            "First_Name": "Морган",
+            "Last_Name": "Уэс",
+            "Country": "Ямайка",
+            "Type": "Защитник",
+            "Birthday": "21.01.1984",
+            "Transfers": [
+                {
+                    "Date": "30.01.2012",
+                    "Team_From": "Ноттингем Форест",
+                    "Team_To": "Лестер",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.05.2003",
+                    "Team_From": "Киддерминстер",
+                    "Team_To": "Ноттингем Форест",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "01.02.2003",
+                    "Team_From": "Ноттингем Форест",
+                    "Team_To": "Киддерминстер",
+                    "Transfer_Type": "Аренда"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 91,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "McNeil",
+                    "Last_Name": "Дуайт",
+                    "Country": "Англия",
+                    "Type": "Нападающий",
+                    "Birthday": "22.11.1999",
+                    "Transfers": null
+                },
+                "Player_To": {
+                    "First_Name": "Выдра",
+                    "Last_Name": "Матей",
+                    "Country": "Чехия",
+                    "Type": "Нападающий",
+                    "Birthday": "01.05.1992",
+                    "Transfers": [
+                        {
+                            "Date": "07.08.2018",
+                            "Team_From": "Дерби Каунти",
+                            "Team_To": "Бёрнли",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "27.08.2016",
+                            "Team_From": "Уотфорд",
+                            "Team_To": "Дерби Каунти",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "31.05.2016",
+                            "Team_From": "Рединг",
+                            "Team_To": "Уотфорд",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.09.2015",
+                            "Team_From": "Уотфорд",
+                            "Team_To": "Рединг",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.07.2015",
+                            "Team_From": "Удинезе",
+                            "Team_To": "Уотфорд",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "30.06.2015",
+                            "Team_From": "Уотфорд",
+                            "Team_To": "Удинезе",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.07.2014",
+                            "Team_From": "Удинезе",
+                            "Team_To": "Уотфорд",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "30.06.2014",
+                            "Team_From": "Вест Бромвич",
+                            "Team_To": "Удинезе",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "13.08.2013",
+                            "Team_From": "Удинезе",
+                            "Team_To": "Вест Бромвич",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "30.06.2013",
+                            "Team_From": "Уотфорд",
+                            "Team_To": "Удинезе",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "30.07.2012",
+                            "Team_From": "Удинезе",
+                            "Team_To": "Уотфорд",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "31.12.2011",
+                            "Team_From": "Брюгге",
+                            "Team_To": "Удинезе",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "31.08.2011",
+                            "Team_From": "Удинезе",
+                            "Team_To": "Брюгге",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.07.2010",
+                            "Team_From": "Баник Острава",
+                            "Team_To": "Удинезе",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.01.2010",
+                            "Team_From": "Высочина Йиглава",
+                            "Team_To": "Баник Острава",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,666 @@
+[
+    {
+        "Period": "1-й тайм",
+        "Time": 12,
+        "Event_Type": "Гол",
+        "Player": {
+            "First_Name": "Джака",
+            "Last_Name": "Гранит",
+            "Country": "Швейцария",
+            "Type": "Полузащитник",
+            "Birthday": "27.09.1992",
+            "Transfers": [
+                {
+                    "Date": "01.07.2016",
+                    "Team_From": "Боруссия М",
+                    "Team_To": "Арсенал",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2012",
+                    "Team_From": "Базель",
+                    "Team_To": "Боруссия М",
+                    "Transfer_Type": "Покупка"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "1-й тайм",
+        "Time": 38,
+        "Event_Type": "Подножка",
+        "Card_Type": "Желтая карточка",
+        "Player": {
+            "First_Name": "",
+            "Last_Name": "Сократис",
+            "Country": "Греция",
+            "Type": "Защитник",
+            "Birthday": "09.06.1988",
+            "Transfers": [
+                {
+                    "Date": "02.07.2018",
+                    "Team_From": "Боруссия Д",
+                    "Team_To": "Арсенал",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2013",
+                    "Team_From": "Вердер",
+                    "Team_To": "Боруссия Д",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2012",
+                    "Team_From": "Дженоа",
+                    "Team_To": "Вердер",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "30.06.2012",
+                    "Team_From": "Вердер",
+                    "Team_To": "Дженоа",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "21.07.2011",
+                    "Team_From": "Дженоа",
+                    "Team_To": "Вердер",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "01.07.2011",
+                    "Team_From": "Милан",
+                    "Team_To": "Дженоа",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "20.07.2010",
+                    "Team_From": "Дженоа",
+                    "Team_To": "Милан",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.08.2008",
+                    "Team_From": "АЕК",
+                    "Team_To": "Дженоа",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "30.06.2006",
+                    "Team_From": "Ники Волос",
+                    "Team_To": "АЕК",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "01.01.2006",
+                    "Team_From": "АЕК",
+                    "Team_To": "Ники Волос",
+                    "Transfer_Type": "Аренда"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 68,
+        "Event_Type": "Неспортивное поведение",
+        "Card_Type": "Желтая карточка",
+        "Player": {
+            "First_Name": "Матич",
+            "Last_Name": "Неманья",
+            "Country": "Сербия",
+            "Type": "Полузащитник",
+            "Birthday": "01.08.1988",
+            "Transfers": [
+                {
+                    "Date": "31.07.2017",
+                    "Team_From": "Челси",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "15.01.2014",
+                    "Team_From": "Бенфика",
+                    "Team_To": "Челси",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2011",
+                    "Team_From": "Челси",
+                    "Team_To": "Бенфика",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "30.06.2011",
+                    "Team_From": "Витесс",
+                    "Team_To": "Челси",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "23.08.2010",
+                    "Team_From": "Челси",
+                    "Team_To": "Витесс",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "18.08.2009",
+                    "Team_From": "Кошице",
+                    "Team_To": "Челси",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.01.2007",
+                    "Team_From": "Колубара",
+                    "Team_To": "Кошице",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.07.2005",
+                    "Team_From": "Единство У.",
+                    "Team_To": "Колубара",
+                    "Transfer_Type": "Покупка"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 69,
+        "Event_Type": "Пенальти",
+        "Player": {
+            "First_Name": "Обамеянг",
+            "Last_Name": "Пьер",
+            "Country": "Габон",
+            "Type": "Нападающий",
+            "Birthday": "18.06.1989",
+            "Transfers": [
+                {
+                    "Date": "31.01.2018",
+                    "Team_From": "Боруссия Д",
+                    "Team_To": "Арсенал",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "04.07.2013",
+                    "Team_From": "Сент-Этьен",
+                    "Team_To": "Боруссия Д",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "01.01.2012",
+                    "Team_From": "Милан",
+                    "Team_To": "Сент-Этьен",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "31.12.2011",
+                    "Team_From": "Сент-Этьен",
+                    "Team_To": "Милан",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "31.01.2011",
+                    "Team_From": "Милан",
+                    "Team_To": "Сент-Этьен",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "30.01.2011",
+                    "Team_From": "Монако",
+                    "Team_To": "Милан",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "06.07.2010",
+                    "Team_From": "Милан",
+                    "Team_To": "Монако",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "30.06.2010",
+                    "Team_From": "Лилль",
+                    "Team_To": "Милан",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "01.07.2009",
+                    "Team_From": "Милан",
+                    "Team_To": "Лилль",
+                    "Transfer_Type": "Аренда"
+                },
+                {
+                    "Date": "30.06.2009",
+                    "Team_From": "Дижон",
+                    "Team_To": "Милан",
+                    "Transfer_Type": "Возвращение из аренды"
+                },
+                {
+                    "Date": "02.07.2008",
+                    "Team_From": "Милан",
+                    "Team_To": "Дижон",
+                    "Transfer_Type": "Аренда"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 71,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Dalot",
+                    "Last_Name": "Diogo",
+                    "Country": "Португалия",
+                    "Type": "Защитник",
+                    "Birthday": "18.03.1999",
+                    "Transfers": [
+                        {
+                            "Date": "01.07.2018",
+                            "Team_From": "Порту",
+                            "Team_To": "Манчестер Юнайтед",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Марсьяль",
+                    "Last_Name": "Антони",
+                    "Country": "Франция",
+                    "Type": "Нападающий",
+                    "Birthday": "05.12.1995",
+                    "Transfers": [
+                        {
+                            "Date": "01.09.2015",
+                            "Team_From": "Монако",
+                            "Team_To": "Манчестер Юнайтед",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2013",
+                            "Team_From": "Лион",
+                            "Team_To": "Монако",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 76,
+        "Event_Type": "Задержка",
+        "Card_Type": "Желтая карточка",
+        "Player": {
+            "First_Name": "Погба",
+            "Last_Name": "Поль",
+            "Country": "Франция",
+            "Type": "Полузащитник",
+            "Birthday": "15.03.1993",
+            "Transfers": [
+                {
+                    "Date": "09.08.2016",
+                    "Team_From": "Ювентус",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "Покупка"
+                },
+                {
+                    "Date": "03.08.2012",
+                    "Team_From": "Манчестер Юнайтед",
+                    "Team_To": "Ювентус",
+                    "Transfer_Type": "Свободный агент"
+                },
+                {
+                    "Date": "01.07.2009",
+                    "Team_From": "Гавр",
+                    "Team_To": "Манчестер Юнайтед",
+                    "Transfer_Type": "?"
+                },
+                {
+                    "Date": "01.07.2007",
+                    "Team_From": "Торси",
+                    "Team_To": "Гавр",
+                    "Transfer_Type": "Свободный агент"
+                }
+            ]
+        }
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 77,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Озил",
+                    "Last_Name": "Месут",
+                    "Country": "Германия",
+                    "Type": "Полузащитник",
+                    "Birthday": "15.10.1988",
+                    "Transfers": [
+                        {
+                            "Date": "03.09.2013",
+                            "Team_From": "Реал Мадрид",
+                            "Team_To": "Арсенал",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "17.08.2010",
+                            "Team_From": "Вердер",
+                            "Team_To": "Реал Мадрид",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "31.01.2008",
+                            "Team_From": "Шальке",
+                            "Team_To": "Вердер",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2005",
+                            "Team_From": "Эссен",
+                            "Team_To": "Шальке",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2000",
+                            "Team_From": "Шальке",
+                            "Team_To": "Эссен",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Ивоби",
+                    "Last_Name": "Алекс",
+                    "Country": "Нигерия",
+                    "Type": "Нападающий",
+                    "Birthday": "03.05.1996",
+                    "Transfers": null
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 80,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Обамеянг",
+                    "Last_Name": "Пьер",
+                    "Country": "Габон",
+                    "Type": "Нападающий",
+                    "Birthday": "18.06.1989",
+                    "Transfers": [
+                        {
+                            "Date": "31.01.2018",
+                            "Team_From": "Боруссия Д",
+                            "Team_To": "Арсенал",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "04.07.2013",
+                            "Team_From": "Сент-Этьен",
+                            "Team_To": "Боруссия Д",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.01.2012",
+                            "Team_From": "Милан",
+                            "Team_To": "Сент-Этьен",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "31.12.2011",
+                            "Team_From": "Сент-Этьен",
+                            "Team_To": "Милан",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "31.01.2011",
+                            "Team_From": "Милан",
+                            "Team_To": "Сент-Этьен",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "30.01.2011",
+                            "Team_From": "Монако",
+                            "Team_To": "Милан",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "06.07.2010",
+                            "Team_From": "Милан",
+                            "Team_To": "Монако",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "30.06.2010",
+                            "Team_From": "Лилль",
+                            "Team_To": "Милан",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "01.07.2009",
+                            "Team_From": "Милан",
+                            "Team_To": "Лилль",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "30.06.2009",
+                            "Team_From": "Дижон",
+                            "Team_To": "Милан",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "02.07.2008",
+                            "Team_From": "Милан",
+                            "Team_To": "Дижон",
+                            "Transfer_Type": "Аренда"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Суарес",
+                    "Last_Name": "Денис",
+                    "Country": "Испания",
+                    "Type": "Полузащитник",
+                    "Birthday": "06.01.1994",
+                    "Transfers": [
+                        {
+                            "Date": "30.01.2019",
+                            "Team_From": "Барселона",
+                            "Team_To": "Арсенал",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "01.07.2016",
+                            "Team_From": "Вильярреал",
+                            "Team_To": "Барселона",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "30.08.2015",
+                            "Team_From": "Барселона",
+                            "Team_To": "Вильярреал",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "28.08.2015",
+                            "Team_From": "Севилья",
+                            "Team_To": "Барселона",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "02.07.2014",
+                            "Team_From": "Барселона",
+                            "Team_To": "Севилья",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "22.08.2013",
+                            "Team_From": "Манчестер Сити",
+                            "Team_To": "Барселона",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2011",
+                            "Team_From": "Сельта",
+                            "Team_To": "Манчестер Сити",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 80,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Матич",
+                    "Last_Name": "Неманья",
+                    "Country": "Сербия",
+                    "Type": "Полузащитник",
+                    "Birthday": "01.08.1988",
+                    "Transfers": [
+                        {
+                            "Date": "31.07.2017",
+                            "Team_From": "Челси",
+                            "Team_To": "Манчестер Юнайтед",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "15.01.2014",
+                            "Team_From": "Бенфика",
+                            "Team_To": "Челси",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2011",
+                            "Team_From": "Челси",
+                            "Team_To": "Бенфика",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "30.06.2011",
+                            "Team_From": "Витесс",
+                            "Team_To": "Челси",
+                            "Transfer_Type": "Возвращение из аренды"
+                        },
+                        {
+                            "Date": "23.08.2010",
+                            "Team_From": "Челси",
+                            "Team_To": "Витесс",
+                            "Transfer_Type": "Аренда"
+                        },
+                        {
+                            "Date": "18.08.2009",
+                            "Team_From": "Кошице",
+                            "Team_To": "Челси",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.01.2007",
+                            "Team_From": "Колубара",
+                            "Team_To": "Кошице",
+                            "Transfer_Type": "Покупка"
+                        },
+                        {
+                            "Date": "01.07.2005",
+                            "Team_From": "Единство У.",
+                            "Team_To": "Колубара",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Greenwood",
+                    "Last_Name": "Mason",
+                    "Country": "Англия",
+                    "Type": "Полузащитник",
+                    "Birthday": "01.10.2001",
+                    "Transfers": null
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 86,
+        "Event_Type": "Замена",
+        "Role_Change": [
+            {
+                "Player_From": {
+                    "First_Name": "Лакасетт",
+                    "Last_Name": "Александр",
+                    "Country": "Франция",
+                    "Type": "Нападающий",
+                    "Birthday": "28.05.1991",
+                    "Transfers": [
+                        {
+                            "Date": "05.07.2017",
+                            "Team_From": "Лион",
+                            "Team_To": "Арсенал",
+                            "Transfer_Type": "Покупка"
+                        }
+                    ]
+                },
+                "Player_To": {
+                    "First_Name": "Нкетиа",
+                    "Last_Name": "Эдвард",
+                    "Country": "Англия",
+                    "Type": "Нападающий",
+                    "Birthday": "30.05.1999",
+                    "Transfers": null
+                }
+            }
+        ]
+    },
+    {
+        "Period": "2-й тайм",
+        "Time": 90,
+        "Event_Type": "Грубая игра",
+        "Card_Type": "Желтая карточка",
+        "Player": {
+            "First_Name": "Колашинац",
+            "Last_Name": "Саед",
+            "Country": "Босния и Герцеговина",
+            "Type": "Защитник",
+            "Birthday": "20.06.1993",
+            "Transfers": [
+                {
+                    "Date": "01.07.2017",
+                    "Team_From": "Шальке",
+                    "Team_To": "Арсенал",
+                    "Transfer_Type": "Свободный агент"
+                },
+                {
+                    "Date": "01.01.2011",
+                    "Team_From": "Штутгарт",
+                    "Team_To": "Шальке",
+                    "Transfer_Type": "Свободный агент"
+                },
+                {
+                    "Date": "01.07.2010",
+                    "Team_From": "Хоффенхайм",
+                    "Team_To": "Штутгарт",
+                    "Transfer_Type": "Свободный агент"
+                },
+                {
+                    "Date": "01.07.2009",
+                    "Team_From": "Карлсруэ",
+                    "Team_To": "Хоффенхайм",
+                    "Transfer_Type": "Свободный агент"
+                }
+            ]
+        }
+    }
+]
