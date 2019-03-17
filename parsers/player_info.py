@@ -35,7 +35,7 @@ def parse_player_info_fullname(player_info):
     return f_name, l_name
 
 
-def parse_transfer_team_name(team_name):
+def parse_transfer_team_name(team_name: str):
     return team_name[1:-1]
 
 
@@ -53,7 +53,8 @@ def get_player_transfers(player_info_page):
             transfer_type = cells[3].get_text()
             transfers.append(dict(zip(transfer_names, [date, team_from, team_to, transfer_type])))
 
-    except:
+    except Exception as e:
+        print(e)
         return
 
     return transfers

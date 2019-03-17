@@ -4,7 +4,7 @@ from myscore_parser.parsers import player_info
 import re
 
 
-def parse_match_time(time):
+def parse_match_time(time: str):
     time = time[:-1]
     if re.match('\d{2,3}\+\d', time):
         add_time = time.split('+')
@@ -12,7 +12,7 @@ def parse_match_time(time):
     return get_period_name(int(time)), int(time)
 
 
-def get_period_name(time):
+def get_period_name(time: int):
     return {
         time <= 45: "1-й тайм",
         45 < time <= 90: "2-й тайм",
@@ -20,11 +20,11 @@ def get_period_name(time):
     }[True]
 
 
-def is_2_element(elements):
+def is_2_element(elements: list) -> bool:
     return len(elements) == 2
 
 
-def get_substitution_name(element, debug=0):
+def get_substitution_name(element, debug=0) -> list:
     substitution = element.find_all('span', templates.period_row_substitution_name)
     player_ids = []
     for sub in substitution:
@@ -51,7 +51,7 @@ def get_participant_id(soup):
     return player_id_regex.findall(soup.find('a')['onclick'])
 
 
-def convert_player_ids_to_url(player_ids):
+def convert_player_ids_to_url(player_ids: list):
     result_list = []
 
     for player_id in player_ids:
@@ -73,7 +73,7 @@ def get_referee_info(match_soup):
     return full_name[2], full_name[1]
 
 
-def get_match_info(bot, debug=0):
+def get_match_info(bot: start.Bot, debug=0):
     match_events = []
 
     try:

@@ -6,7 +6,7 @@ from time import sleep
 
 
 class Bot:
-    def __init__(self, url):
+    def __init__(self, url: str):
         self.driver = webdriver.Chrome("chromedriver")
         self.url = url
         self.navigate()
@@ -18,19 +18,10 @@ class Bot:
     def get_page_soup(self):
         return BeautifulSoup(self.driver.page_source, "html.parser")
 
-    def get_page_source_by_new_url(self, url):
+    def get_page_source_by_new_url(self, url: str) -> BeautifulSoup:
         prev_url, self.url = self.url, url
         self.navigate()
         return self.get_page_soup()
-
-
-def load_data_by_url(url, driver):
-    driver.get(url)
-    return driver.page_source
-
-
-def get_soup_page_by_url(url, driver):
-    return BeautifulSoup(load_data_by_url(url, driver), "html.parser")
 
 
 def main():
@@ -43,7 +34,8 @@ def main():
         try:
             element.click()
             sleep(2)
-        except:
+        except Exception as e:
+            print(e)
             break
 
     tournament_soup = bot.get_page_soup()

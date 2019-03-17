@@ -5,7 +5,7 @@ from time import sleep
 import re
 
 
-def is_start_new_tournament(cell_text):
+def is_start_new_tournament(cell_text: str) -> bool:
     return cell_text.startswith('Тур')
 
 
@@ -13,7 +13,7 @@ def is_home_team(team_cell):
     return "team-home" in team_cell['class']
 
 
-def set_home_team(teams):
+def set_home_team(teams: list) -> str:
     home_team = 'null'
     if is_home_team(teams[0]):
         home_team = parse_team_name(teams[0].get_text())
@@ -23,16 +23,16 @@ def set_home_team(teams):
     return home_team
 
 
-def parse_team_name(score):
+def parse_team_name(score: str) -> str:
     return re.sub('[\xa0]', '', score)
 
 
-def parse_tournament_date(tournament_info_page):
+def parse_tournament_date(tournament_info_page) -> tuple:
     date = tournament_info_page.find('span', templates.tournament_info_date).get_text().split('/')
     return date[0], date[1]
 
 
-def update_bad_parse_date(date, years):
+def update_bad_parse_date(date: str, years: tuple) -> str:
     reg = re.compile(r'[0-9]+')
     list_int_time = list(map(lambda x: int(x), reg.findall(date)))
     if list_int_time[1] > 7:
