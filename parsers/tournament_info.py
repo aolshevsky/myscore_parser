@@ -26,6 +26,18 @@ def parse_team_name(score):
     return re.sub('[\xa0]', '', score)
 
 
+def start_parse_match(bot):
+    bot.driver.switch_to.window(bot.driver.window_handles[-1])
+    match_events = match_info.get_match_info(bot)
+    end_parse_match(bot)
+    return match_events
+
+
+def end_parse_match(bot):
+    bot.driver.close()
+    bot.driver.switch_to.window(bot.window_handle)
+
+
 def get_tournament_matches(bot, tournament_info_page):
     tournaments, matches = [], []
     tournament_names = ['Date', 'Home_Team', 'First_Team', 'Second_Team', 'Score']
@@ -46,13 +58,12 @@ def get_tournament_matches(bot, tournament_info_page):
             second_team = parse_team_name(cells[3].get_text())
             score = parse_team_name(cells[4].get_text())
             matches.append(dict(zip(tournament_names, [date, home_team, first_team, second_team, score])))
+
             element = bot.driver.find_element_by_id(row['id'])
             element.click()
-            sleep(2)
-            bot.driver.switch_to.window(bot.driver.window_handles[-1])
-            match_info.get_match_info(bot)
-            bot.driver.close()
-            bot.driver.switch_to.window(bot.window_handle)
+            sleep(3)
+            match_events = start_parse_match(bot)
+            
 
     except BaseException as e:
         print(e)

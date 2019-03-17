@@ -1,13 +1,25 @@
 from myscore_parser import templates
 
 
-def get_player_info(player_info_page):
+def get_player_info(player_info_page, debug=0):
     player_info = player_info_page.find('div', templates.player_info_block)
     f_name, l_name = parse_player_info_fullname(player_info_page)
-    print("Игрок\nИмя: {f_name}\nФамилия: {l_name}".format(f_name=f_name, l_name=l_name))
-    print("Страна: {country}".format(country=player_info.find('div', templates.player_info_country).get_text()))
-    print("Дата рождения: {birthday}".format(birthday=parse_player_info_birthday(player_info)))
-    print("Тип игрока: {type}".format(type=player_info.find('div', templates.player_info_type_name).get_text()))
+    country = player_info.find('div', templates.player_info_country).get_text()
+    player_type = player_info.find('div', templates.player_info_type_name).get_text()
+    birthday = parse_player_info_birthday(player_info)
+    transfers = get_player_transfers(player_info_page)
+    if debug:
+        print("Игрок\nИмя: {f_name}\nФамилия: {l_name}".format(f_name=f_name, l_name=l_name))
+        print("Страна: {country}".format(country=country))
+        print("Дата рождения: {birthday}".format(birthday=birthday))
+        print("Тип игрока: {type}".format(type=player_type))
+        print("Трансферы: {transfers}".format(transfers=transfers))
+
+    player_info_data = [f_name, l_name, country, player_type, birthday, transfers]
+    player_info_data_txt = ["First_Name", "Last_Name", "Country", "Type", "Birthday", "Transfers"]
+
+    player = dict(zip(player_info_data_txt, player_info_data))
+    return player
 
 
 def parse_player_info_birthday(player_info):
