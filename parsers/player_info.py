@@ -1,7 +1,7 @@
 from myscore_parser import templates
 
 
-def get_player_info(player_info_page, debug=0):
+def get_player_info(player_info_page, is_parse_transfers=False, debug=0):
     player_info = player_info_page.find('div', templates.player_info_block)
     f_name, l_name = parse_player_info_fullname(player_info_page)
     country = player_info.find('div', templates.player_info_country).get_text()
@@ -15,9 +15,12 @@ def get_player_info(player_info_page, debug=0):
         print("Тип игрока: {type}".format(type=player_type))
         print("Трансферы: {transfers}".format(transfers=transfers))
 
-    player_info_data = [f_name, l_name, country, player_type, birthday, transfers]
-    player_info_data_txt = ["First_Name", "Last_Name", "Country", "Type", "Birthday", "Transfers"]
+    player_info_data = [f_name, l_name, country, player_type, birthday]
+    player_info_data_txt = ["First_Name", "Last_Name", "Country", "Type", "Birthday"]
 
+    if is_parse_transfers:
+        player_info_data.append(transfers)
+        player_info_data_txt.append("Transfers")
     player = dict(zip(player_info_data_txt, player_info_data))
     return player
 

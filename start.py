@@ -14,6 +14,7 @@ class Bot:
 
     def navigate(self):
         self.driver.get(self.url)
+        sleep(1)
 
     def get_page_soup(self):
         return BeautifulSoup(self.driver.page_source, "html.parser")

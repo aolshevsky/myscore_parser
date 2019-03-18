@@ -1,6 +1,6 @@
-from myscore_parser import templates
-from myscore_parser import start
-from myscore_parser.parsers import player_info
+from myscore_parser import templates, start
+from myscore_parser.parsers import player_info, helpers
+from time import sleep
 import re
 
 
@@ -72,13 +72,51 @@ def get_referee_info(match_soup):
     return full_name[2], full_name[1]
 
 
-def get_match_info(bot: start.Bot, debug=0):
+def get_match_lineups(bot, debug=0):
+    match_soup = bot.get_page_source_by_new_url(helpers.change_js_postfix_in_url(
+        bot.driver.current_url, templates.match_info_lineups_js))
+
+    lineups_data = match_soup.find('table', templates.match_info_lineups)
+    all_players = lineups_data.find('tbody').find_all('tr')
+
+    for row in all_players:
+        player_ids = []
+        cells = row.find_all('td')
+
+        print(cells[0]['class'])
+
+        if templates.match_info_lineups_header in cells[0]['class']:
+            continue
+
+        number_1 = cells[0].find('div', templates.match_info_lineups_number).get_text()
+        number_2 = cells[1].find('div', templates.match_info_lineups_number).get_text()
+
+        player_ids += get_participant_id(cells[0].find('div', templates.match_info_lineups_player))
+        player_ids += get_participant_id(cells[1].find('div', templates.match_info_lineups_player))
+
+        players = []
+
+        for p_url in convert_player_ids_to_url(player_ids):
+            player_info_page = bot.get_page_source_by_new_url(p_url)
+            players.append(player_info.get_player_info(player_info_page, True))
+
+        if debug:
+            print("Игрок1: {player}".format(player=players[0]))
+            print("Номер: {number}".format(number=number_1))
+            print("Игрок2: {player}".format(player=players[1]))
+            print("Номер: {number}".format(number=number_2))
+            print()
+
+
+def get_match_info(bot, debug=0):
     match_events = []
 
     try:
         match_soup = bot.get_page_source_by_new_url(bot.driver.current_url)
 
         match_data = match_soup.find('div', templates.periods_block)
+
+        get_match_lineups(bot, 1)  # debug
 
         referee_full_name = get_referee_info(match_soup)
         if debug:
@@ -149,7 +187,8 @@ def get_match_info(bot: start.Bot, debug=0):
                 print()
 
     except BaseException as e:
-        print(e)
+        print("Error: ", e)
+        print("Url: ", bot.driver.current_url)
 
     return match_events
 

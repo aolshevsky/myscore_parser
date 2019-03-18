@@ -9,7 +9,7 @@ def is_start_new_tournament(cell_text: str) -> bool:
     return cell_text.startswith('Тур')
 
 
-def is_home_team(team_cell):
+def is_home_team(team_cell) -> bool:
     return "team-home" in team_cell['class']
 
 
@@ -92,7 +92,7 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
                 print('Счёт: {score}\n'.format(score=score))
 
     except BaseException as e:
-        # print(e)
+        print(e)
         return
 
     tournaments.append(matches)
