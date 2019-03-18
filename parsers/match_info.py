@@ -55,7 +55,6 @@ def convert_player_ids_to_url(player_ids: list):
     result_list = []
 
     for player_id in player_ids:
-
         url = '{}{}'.format(
             templates.BASE_URL,
             player_id

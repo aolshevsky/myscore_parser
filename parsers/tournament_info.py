@@ -43,7 +43,7 @@ def update_bad_parse_date(date: str, years: tuple) -> str:
 
 def start_parse_match(bot):
     bot.driver.switch_to.window(bot.driver.window_handles[-1])
-    match_events = match_info.get_match_info(bot)
+    match_events = match_info.get_match_info(bot, 1)  # debug
     end_parse_match(bot)
     return match_events
 
@@ -92,7 +92,7 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
                 print('Счёт: {score}\n'.format(score=score))
 
     except BaseException as e:
-        print(e)
+        # print(e)
         return
 
     tournaments.append(matches)
