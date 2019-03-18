@@ -14,14 +14,15 @@ class Bot:
 
     def navigate(self):
         self.driver.get(self.url)
-        sleep(1)
 
     def get_page_soup(self):
         return BeautifulSoup(self.driver.page_source, "html.parser")
 
-    def get_page_source_by_new_url(self, url: str) -> BeautifulSoup:
+    def get_page_source_by_new_url(self, url: str, is_sleep=False) -> BeautifulSoup:
         prev_url, self.url = self.url, url
         self.navigate()
+        if is_sleep:
+            sleep(1)
         return self.get_page_soup()
 
 

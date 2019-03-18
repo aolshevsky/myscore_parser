@@ -1,6 +1,5 @@
 from myscore_parser import templates, start
 from myscore_parser.parsers import player_info, helpers
-from time import sleep
 import re
 
 
@@ -74,7 +73,7 @@ def get_referee_info(match_soup):
 
 def get_match_lineups(bot, debug=0):
     match_soup = bot.get_page_source_by_new_url(helpers.change_js_postfix_in_url(
-        bot.driver.current_url, templates.match_info_lineups_js))
+        bot.driver.current_url, templates.match_info_lineups_js), True)
 
     lineups_data = match_soup.find('table', templates.match_info_lineups)
     all_players = lineups_data.find('tbody').find_all('tr')
@@ -82,8 +81,6 @@ def get_match_lineups(bot, debug=0):
     for row in all_players:
         player_ids = []
         cells = row.find_all('td')
-
-        print(cells[0]['class'])
 
         if templates.match_info_lineups_header in cells[0]['class']:
             continue
@@ -129,6 +126,7 @@ def get_match_info(bot, debug=0):
             period_name, time = parse_match_time(ev.find('div', templates.period_row_time).text)
 
             soccer_ball = ev.find('div', templates.period_row_soccer_ball)
+            penalty_missed = ev.find('span', templates.period_row_penalty_missed)
             y_card = ev.find('div', templates.period_row_y_card)
             r_card = ev.find('div', templates.period_row_r_card)
             sub_incident = ev.find('span', templates.period_row_sub_incident_name)
@@ -147,6 +145,8 @@ def get_match_info(bot, debug=0):
                 incident_card = 'Желтая карточка'
             if r_card:
                 incident_card = 'Красная карточка'
+            if penalty_missed:
+                incident = 'Незабитый пенальти'
             if soccer_ball:
                 incident = 'Гол'
             if sub_incident:

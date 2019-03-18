@@ -1,6 +1,23 @@
 from myscore_parser import templates
 
 
+def parse_player_info_birthday(player_info):
+    row_birthday = player_info.find('div', templates.player_info_birthdate)
+    if row_birthday:
+        return row_birthday.text[-12:-2]
+
+
+def parse_player_info_fullname(player_info):
+    player_name = player_info.find('div', templates.player_info_fullname).get_text()
+    full_name = player_name.split('(')[0].split()
+    f_name, l_name = ' '.join(full_name[1:]), full_name[0]
+    return f_name, l_name
+
+
+def parse_transfer_team_name(team_name: str):
+    return team_name[1:-1]
+
+
 def get_player_info(player_info_page, is_parse_transfers=False, debug=0):
     player_info = player_info_page.find('div', templates.player_info_block)
     f_name, l_name = parse_player_info_fullname(player_info_page)
@@ -25,27 +42,12 @@ def get_player_info(player_info_page, is_parse_transfers=False, debug=0):
     return player
 
 
-def parse_player_info_birthday(player_info):
-    row_birthday = player_info.find('div', templates.player_info_birthdate)
-    if row_birthday:
-        return row_birthday.text[-12:-2]
-
-
-def parse_player_info_fullname(player_info):
-    player_name = player_info.find('div', templates.player_info_fullname).get_text()
-    full_name = player_name.split('(')[0].split()
-    f_name, l_name = ' '.join(full_name[1:]), full_name[0]
-    return f_name, l_name
-
-
-def parse_transfer_team_name(team_name: str):
-    return team_name[1:-1]
-
-
 def get_player_transfers(player_info_page):
     transfers = []
     transfer_names = ['Date', 'Team_From', 'Team_To', 'Transfer_Type']
     try:
+        if player_info_page.find('table', templates.player_info_transfer_table):
+            return []
         all_transfers = player_info_page.find('table', templates.player_info_transfer_table).find('tbody').find_all('tr')
 
         for row in all_transfers:
@@ -58,6 +60,6 @@ def get_player_transfers(player_info_page):
 
     except Exception as e:
         print(e)
-        return
+        return []
 
     return transfers

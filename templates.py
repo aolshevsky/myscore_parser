@@ -22,6 +22,7 @@ period_row = {'class': 'detailMS__incidentRow'}
 period_row_time = {'class': ['time-box', 'time-box-wide']}
 period_row_y_card = {'class': 'y-card'}
 period_row_r_card = {'class': 'r-card'}
+period_row_penalty_missed = {'class': 'penalty-missed'}
 period_row_substitution_name = {'class': ['substitution-in-name', 'substitution-out-name']}
 period_row_participant_name = {'class': 'participant-name'}
 period_row_soccer_ball = {'class': 'soccer-ball'}
@@ -35,3 +36,5 @@ player_info_birthdate = {'class': 'player-birthdate'}
 player_info_type_name = {'class': 'player-type-name'}
 player_info_transfer_table = {'class': 'transfer-table'}
 
+
+team_info_country_name = {'class', 'tournament'}
