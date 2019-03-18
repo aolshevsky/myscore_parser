@@ -11,6 +11,7 @@ match_info_content = {'class': 'content'}
 match_info_lineups_js = '#lineups;1'
 match_info_lineups = {'class': 'parts'}
 match_info_lineups_header = 'h-part'
+match_info_lineups_header_no_main = 'Замены'
 match_info_lineups_content = {'id': 'tab-match-lineups'}
 match_info_lineups_number = {'class': 'time-box'}
 match_info_lineups_player = {'class': 'name'}

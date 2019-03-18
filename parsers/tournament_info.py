@@ -34,16 +34,16 @@ def parse_tournament_date(tournament_info_page) -> tuple:
 
 def update_bad_parse_date(date: str, years: tuple) -> str:
     reg = re.compile(r'[0-9]+')
-    list_int_time = list(map(lambda x: int(x), reg.findall(date)))
-    if list_int_time[1] > 7:
-        return date[:6] + years[0] + date[6:]
+    l_time = list(map(lambda x: int(x), reg.findall(date)))
+    if l_time[1] > 7:
+        return '-'.join([years[0], l_time[1], l_time[0]]) + 'T{0}:{1}:00.000'.format(l_time[2], l_time[3])
 
-    return date[:6] + years[1] + date[6:]
+    return '-'.join([years[1], str(l_time[1]), str(l_time[0])]) + 'T{0}:{1}:00.000'.format(l_time[2], l_time[3])
 
 
 @helpers.go_to_a_new_page
-def get_match_events(bot, debug=0):
-    match_events = match_info.get_match_info(bot, debug)  # debug
+def get_match_events(bot, share_data, debug=0):
+    match_events = match_info.get_match_info(bot, share_data, debug)  # debug
     return match_events
 
 
@@ -74,7 +74,8 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
             sleep(2)
             element.click()
             sleep(2)
-            match_events = get_match_events(bot, 1)  # debug
+            share_data = {'Date': date}
+            match_events = get_match_events(bot, share_data,  1)  # debug
             storage.save_to_json_file(match_events,
                                       "match_events_" + '__'.join([date, first_team, second_team]), "match_events")
 

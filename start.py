@@ -23,7 +23,7 @@ class Bot:
         prev_url, self.url = self.url, url
         self.navigate()
         if is_sleep:
-            sleep(1)
+            sleep(2)
         return self.get_page_soup()
 
     def add_window_handle(self, element):
@@ -34,6 +34,7 @@ class Bot:
 
     def get_current_window_handel(self):
         return self.window_handle[-1]
+
 
 def main():
     tournament_url = 'https://www.myscore.com.ua/football/england/premier-league/results/'
