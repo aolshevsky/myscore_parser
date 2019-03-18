@@ -46,7 +46,7 @@ def get_player_transfers(player_info_page):
     transfers = []
     transfer_names = ['Date', 'Team_From', 'Team_To', 'Transfer_Type']
     try:
-        if player_info_page.find('table', templates.player_info_transfer_table):
+        if not player_info_page.find('table', templates.player_info_transfer_table):
             return []
         all_transfers = player_info_page.find('table', templates.player_info_transfer_table).find('tbody').find_all('tr')
 

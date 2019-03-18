@@ -10,7 +10,8 @@ class Bot:
         self.driver = webdriver.Chrome("chromedriver")
         self.url = url
         self.navigate()
-        self.window_handle = self.driver.window_handles[-1]
+        self.window_handle = []
+        self.add_window_handle(self.driver.window_handles[-1])
 
     def navigate(self):
         self.driver.get(self.url)
@@ -25,6 +26,14 @@ class Bot:
             sleep(1)
         return self.get_page_soup()
 
+    def add_window_handle(self, element):
+        self.window_handle.append(element)
+
+    def pop_window_handle(self):
+        self.window_handle.pop()
+
+    def get_current_window_handel(self):
+        return self.window_handle[-1]
 
 def main():
     tournament_url = 'https://www.myscore.com.ua/football/england/premier-league/results/'

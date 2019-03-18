@@ -1,5 +1,6 @@
 from myscore_parser import templates, start
-from myscore_parser.parsers import player_info, helpers
+from myscore_parser.parsers import player_info, team_info, helpers
+from time import sleep
 import re
 
 
@@ -23,45 +24,22 @@ def is_2_element(elements: list) -> bool:
     return len(elements) == 2
 
 
-def get_substitution_name(element, debug=0) -> list:
+def get_substitution_name(element) -> list:
     substitution = element.find_all('span', templates.period_row_substitution_name)
     player_ids = []
     for sub in substitution:
-        if debug:
-            if sub['class'][0] == 'substitution-out-name':
-                print("Игрок: {player} ушел с поля".format(player=sub.get_text()))
-            else:
-                print("Игрок: {player} вышел на поле".format(player=sub.get_text()))
-        player_ids += get_participant_id(sub)
+        player_ids += helpers.get_id_of_clickable_element(sub)
 
     return player_ids
 
 
 def get_participant_name(element):
     player_name = element.find('span', templates.period_row_participant_name)
+    player_ids = []
     if player_name:
-        return get_participant_id(player_name)
+        player_ids = helpers.get_id_of_clickable_element(player_name)
 
-    return []
-
-
-def get_participant_id(soup):
-    player_id_regex = re.compile('/[\S]*/')
-    return player_id_regex.findall(soup.find('a')['onclick'])
-
-
-def convert_player_ids_to_url(player_ids: list):
-    result_list = []
-
-    for player_id in player_ids:
-        url = '{}{}'.format(
-            templates.BASE_URL,
-            player_id
-        )
-
-        result_list.append(url)
-
-    return result_list
+    return player_ids
 
 
 def get_referee_info(match_soup):
@@ -71,8 +49,34 @@ def get_referee_info(match_soup):
     return full_name[2], full_name[1]
 
 
+def get_match_teams(bot, match_soup, debug=0):
+
+    teams_block = match_soup.find('div', templates.match_info_teams_block)
+    teams_soup = teams_block.find_all('div', templates.match_info_teams)
+
+    # team_ids = [helpers.get_id_of_clickable_element(teams_soup[i]) for i in range(2)]
+    teams = []
+
+    teams_urls = bot.driver.find_elements_by_class_name(templates.match_info_teams_element)
+
+    for i in range(2):
+        sleep(2)
+        teams_urls[i + 1].click()
+        sleep(2)
+        teams.append(get_match_team(bot))
+
+    if debug:
+        [print("Team{ind}: {team}".format(ind=i+1, team=teams[i])) for i in range(2)]
+
+
+@helpers.go_to_a_new_page
+def get_match_team(bot):
+    match_team = team_info.get_team_info(bot)
+    return match_team
+
+
 def get_match_lineups(bot, debug=0):
-    match_soup = bot.get_page_source_by_new_url(helpers.change_js_postfix_in_url(
+    match_soup = bot.get_page_source_by_new_url(helpers.change_js_suffix_in_url(
         bot.driver.current_url, templates.match_info_lineups_js), True)
 
     lineups_data = match_soup.find('table', templates.match_info_lineups)
@@ -88,12 +92,12 @@ def get_match_lineups(bot, debug=0):
         number_1 = cells[0].find('div', templates.match_info_lineups_number).get_text()
         number_2 = cells[1].find('div', templates.match_info_lineups_number).get_text()
 
-        player_ids += get_participant_id(cells[0].find('div', templates.match_info_lineups_player))
-        player_ids += get_participant_id(cells[1].find('div', templates.match_info_lineups_player))
+        player_ids += helpers.get_id_of_clickable_element(cells[0].find('div', templates.match_info_lineups_player))
+        player_ids += helpers.get_id_of_clickable_element(cells[1].find('div', templates.match_info_lineups_player))
 
         players = []
 
-        for p_url in convert_player_ids_to_url(player_ids):
+        for p_url in helpers.convert_ids_to_urls(player_ids):
             player_info_page = bot.get_page_source_by_new_url(p_url)
             players.append(player_info.get_player_info(player_info_page, True))
 
@@ -113,6 +117,7 @@ def get_match_info(bot, debug=0):
 
         match_data = match_soup.find('div', templates.periods_block)
 
+        get_match_teams(bot, match_soup, 1)  # debug
         get_match_lineups(bot, 1)  # debug
 
         referee_full_name = get_referee_info(match_soup)
@@ -130,12 +135,12 @@ def get_match_info(bot, debug=0):
             y_card = ev.find('div', templates.period_row_y_card)
             r_card = ev.find('div', templates.period_row_r_card)
             sub_incident = ev.find('span', templates.period_row_sub_incident_name)
-            player_ids += get_substitution_name(ev)  # debug
+            player_ids += get_substitution_name(ev)
             player_ids += get_participant_name(ev)
 
             players = []
 
-            for p_url in convert_player_ids_to_url(player_ids):
+            for p_url in helpers.convert_ids_to_urls(player_ids):
                 player_info_page = bot.get_page_source_by_new_url(p_url)
                 players.append(player_info.get_player_info(player_info_page))
 

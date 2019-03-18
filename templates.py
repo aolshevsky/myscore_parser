@@ -3,17 +3,20 @@ BASE_URL = 'http://www.myscore.com.ua'
 
 tournament_info = {'class', 'tournament-page'}
 tournament_info_get_more_matches = "//table[@class='link-more-games']/tbody/tr/td/a"
-tournament_info_date = {'class', 'breadcrumb__text'}
+tournament_info_date = {'class': 'breadcrumb__text'}
 
 
 match_info = {'class': 'match-information-data'}
-match_info_content = {'class', 'content'}
+match_info_content = {'class': 'content'}
 match_info_lineups_js = '#lineups;1'
-match_info_lineups = {'class', 'parts'}
+match_info_lineups = {'class': 'parts'}
 match_info_lineups_header = 'h-part'
-match_info_lineups_content = {'id', 'tab-match-lineups'}
-match_info_lineups_number = {'class', 'time-box'}
-match_info_lineups_player = {'class', 'name'}
+match_info_lineups_content = {'id': 'tab-match-lineups'}
+match_info_lineups_number = {'class': 'time-box'}
+match_info_lineups_player = {'class': 'name'}
+match_info_teams_block = {'class': 'team-primary-content'}
+match_info_teams = {'class': 'tname__text'}
+match_info_teams_element = 'participant-imglink'
 
 
 periods_block = {'class': 'detailMS'}

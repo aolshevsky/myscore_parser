@@ -1,6 +1,6 @@
 from myscore_parser import templates
 from myscore_parser import storage
-from myscore_parser.parsers import match_info
+from myscore_parser.parsers import match_info, helpers
 from time import sleep
 import re
 
@@ -41,16 +41,10 @@ def update_bad_parse_date(date: str, years: tuple) -> str:
     return date[:6] + years[1] + date[6:]
 
 
-def start_parse_match(bot):
-    bot.driver.switch_to.window(bot.driver.window_handles[-1])
-    match_events = match_info.get_match_info(bot, 1)  # debug
-    end_parse_match(bot)
+@helpers.go_to_a_new_page
+def get_match_events(bot, debug=0):
+    match_events = match_info.get_match_info(bot, debug)  # debug
     return match_events
-
-
-def end_parse_match(bot):
-    bot.driver.close()
-    bot.driver.switch_to.window(bot.window_handle)
 
 
 def get_tournament_matches(bot, tournament_info_page, debug=0):
@@ -80,7 +74,7 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
             sleep(2)
             element.click()
             sleep(2)
-            match_events = start_parse_match(bot)
+            match_events = get_match_events(bot, 1)  # debug
             storage.save_to_json_file(match_events,
                                       "match_events_" + '__'.join([date, first_team, second_team]), "match_events")
 
