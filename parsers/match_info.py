@@ -124,8 +124,7 @@ def get_match_lineups(bot, match_teams, debug=0):
 
         players_data_team1 += row_players[0].values()
         players_data_team2 += row_players[1].values()
-
-        row_match_player.append([row_players[i].values()[0, 1, 2, 4] + [numbers[i], is_main] +
+        row_match_player.append([[row_players[i].values()[j] for j in [0, 1, 2, 4]] + [numbers[i], is_main] +
                                 match_teams for i in range(2)])
         match_players += row_match_player
 
@@ -135,7 +134,7 @@ def get_match_lineups(bot, match_teams, debug=0):
             print("Основной состав: {is_main}".format(is_main=is_main))
             print()
 
-    save_match_players(match_players, match_teams)
+    save_match_players(dict(zip(match_players_txt, match_players)), match_teams)
 
     players_team1 = dict(zip(player_data_txt, players_data_team1))
     players_team2 = dict(zip(player_data_txt, players_data_team2))
@@ -163,6 +162,13 @@ def save_match_players(match_players: dict, match_teams: dict):
     storage.save_data(match_players, match_players_file_name, templates.match_players_folder)  # testing
 
 
+def save_match(match: dict):
+    match_file_name = 'match_' + '__'.join([match['First_Team']['Name'],
+                                            match['Second_Team']['Name'],
+                                            match['Date']])
+    storage.save_data(match, match_file_name, templates.match_folder)  # testing
+
+
 def get_match_info(bot, share_data, debug=0):
     try:
         match_soup = bot.get_page_source_by_new_url(bot.driver.current_url)
@@ -181,10 +187,13 @@ def get_match_info(bot, share_data, debug=0):
                            'Card_Template_Name', 'Description']
         match_role_changes = []
         match_role_changes_txt = ['Match_Time_Template_Name', 'Match_Time', 'Person_To', 'Person_From']
-        match_events = []
-        match_events_txt = ['Match_Time_Template_Name', 'Match_Time', 'Player', 'Event_Template_Name']
+        match_simple_events = []
+        match_simple_events_txt = ['Match_Time_Template_Name', 'Match_Time', 'Player', 'Event_Template_Name']
         match_referee_txt = ['First_Name', 'Last_Name', 'First_Team', 'Second_Team', 'Date_Time', 'Is_Main']
         match_referee = []
+        match = match_teams
+        match += team_info.get_team_data_by_name(match_teams, share_data['Home_Team']) + [match_date]
+        match_txt = ['First_Team', 'Second_Team', 'Home_Team', 'Date_Time']
 
         players_teams = get_match_lineups(bot, match_teams, 1)  # debug
         save_players_teams(players_teams, match_teams)
@@ -194,6 +203,7 @@ def get_match_info(bot, share_data, debug=0):
         match_referee += match_data_for_match_events + [1]
         save_referee_data(get_referee_info(match_soup, True))  # testing
         save_match_referee(dict(zip(match_referee_txt, match_referee)))
+        save_match(dict(zip(match_txt, match)))
 
         if debug:
             print(bot.driver.current_url)
@@ -240,8 +250,8 @@ def get_match_info(bot, share_data, debug=0):
                 match_role_change = [period_name, time, players[0], players[1]]
                 match_role_changes.append(dict(zip(match_role_changes_txt, match_role_change)))
             else:
-                match_event = [period_name, time, players[0], incident]
-                match_events.append(dict(zip(match_events_txt, match_event)))
+                match_simple_event = [period_name, time, players[0], incident]
+                match_simple_events.append(dict(zip(match_simple_events_txt, match_simple_event)))
 
             if debug:
                 print("Тайм: {period_name}".format(period_name=period_name))
@@ -257,11 +267,11 @@ def get_match_info(bot, share_data, debug=0):
                     print("Игрок: {player}".format(player=players[0]))
                 print()
 
-        match_data_txt = ['Match', 'Simple_Events', 'Cards', 'Role_Changes']
-        match_data = [match_for_match_events, match_events, match_cards, match_role_changes]
-        match = dict(zip(match_data_txt, match_data))
+        match_events_data_txt = ['Match', 'Simple_Events', 'Cards', 'Role_Changes']
+        match_events_data = [match_for_match_events, match_simple_events, match_cards, match_role_changes]
+        match_events = dict(zip(match_events_data_txt, match_events_data))
 
-        return match
+        return match_events
 
     except BaseException as e:
         print("Error: ", e)
