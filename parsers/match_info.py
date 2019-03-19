@@ -138,6 +138,14 @@ def save_players_teams(players_teams, match_teams):
     map(storage.save_data, players_teams, players_team_file_names, [templates.persons_folder] * 2)  # testing
 
 
+def save_match_referee(match_referee: dict):
+    match_referee_file_name = 'match_referee_' + '__'.join([match_referee['First_Team']['Name'],
+                                                            match_referee['Second_Team']['Name'],
+                                                            match_referee['Date'],
+                                                            match_referee['Last_Name']])
+    storage.save_data(match_referee, match_referee_file_name, templates.match_referee_folder)
+
+
 def get_match_info(bot, share_data, debug=0):
     try:
         match_soup = bot.get_page_source_by_new_url(bot.driver.current_url)
@@ -158,12 +166,17 @@ def get_match_info(bot, share_data, debug=0):
         match_role_changes_txt = ['Match_Time_Template_Name', 'Match_Time', 'Person_To', 'Person_From']
         match_events = []
         match_events_txt = ['Match_Time_Template_Name', 'Match_Time', 'Player', 'Event_Template_Name']
+        match_referee_txt = ['First_Name', 'Last_Name', 'First_Team', 'Second_Team', 'Date_Time', 'Is_Main']
+        match_referee = []
 
         players_teams = get_match_lineups(bot, 1)  # debug
         save_players_teams(players_teams, match_teams)
 
         referee = get_referee_info(match_soup)
+        match_referee += referee.values()
+        match_referee += match_data_for_match_events + [1]
         save_referee_data(get_referee_info(match_soup, True))  # testing
+        save_match_referee(dict(zip(match_referee_txt, match_referee)))
 
         if debug:
             print(bot.driver.current_url)

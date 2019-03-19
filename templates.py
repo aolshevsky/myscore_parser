@@ -52,5 +52,5 @@ teams_folder = 'teams'
 persons_folder = 'persons'
 match_players_folder = 'match_players'
 player_team_movement_folder = 'player_team_movement'
-referee_match_folder = 'referee_match'
+match_referee_folder = 'match_referee'
 
