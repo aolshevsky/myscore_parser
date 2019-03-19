@@ -42,3 +42,15 @@ player_info_transfer_table = {'class': 'transfer-table'}
 
 
 team_info_country_name = {'class', 'tournament'}
+
+
+# Folder name
+base_dir = 'data'
+tournament_folder = 'tournaments'
+match_event_folder = 'match_events'
+teams_folder = 'teams'
+persons_folder = 'persons'
+match_players_folder = 'match_players'
+player_team_movement_folder = 'player_team_movement'
+referee_match_folder = 'referee_match'
+

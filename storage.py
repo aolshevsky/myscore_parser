@@ -1,12 +1,12 @@
+from myscore_parser import templates
 import os
 import json
 import re
 
-BASE_DIR = 'data'
-
 
 def save_to_json_file(data, file_name: str, project_dir: str):
-    path_file = os.path.join(os.getcwd(), BASE_DIR, project_dir, '{0}.json'.format(re.sub('[:|. ]', '_', file_name)))
+    path_file = os.path.join(os.getcwd(), templates.base_dir,
+                             project_dir, '{0}.json'.format(re.sub('[:|. ]', '_', file_name)))
     create_project_dir(project_dir)
     if not os.path.isfile(path_file):
         create_file(path_file)
@@ -21,6 +21,12 @@ def create_file(path: str):
 
 
 def create_project_dir(project_name: str):
-    search_dir = os.path.join(BASE_DIR, project_name)
+    search_dir = os.path.join(templates.base_dir, project_name)
     if not os.path.exists(search_dir):
         os.makedirs(search_dir)
+
+
+def is_file_in_project_dir(file_name: str, project_dir: str) -> bool:
+    path_file = os.path.join(os.getcwd(), templates.base_dir,
+                             project_dir, '{0}.json'.format(re.sub('[:|. ]', '_', file_name)))
+    return os.path.isfile(path_file)

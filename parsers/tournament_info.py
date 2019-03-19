@@ -41,6 +41,14 @@ def update_bad_parse_date(date: str, years: tuple) -> str:
     return '-'.join([years[1], str(l_time[1]), str(l_time[0])]) + 'T{0}:{1}:00.000'.format(l_time[2], l_time[3])
 
 
+def update_bad_parse_date_to_site_format(date: str, years: tuple) -> str:
+    reg = re.compile(r'[0-9]+')
+    l_time = list(map(lambda x: int(x), reg.findall(date)))
+    if l_time[1] > 7:
+        return date[:6] + years[0] + date[6:]
+    return date[:6] + years[1] + date[6:]
+
+
 @helpers.go_to_a_new_page
 def get_match_events(bot, share_data, debug=0):
     match_events = match_info.get_match_info(bot, share_data, debug)  # debug
@@ -64,20 +72,22 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
                 continue
 
             date = update_bad_parse_date(cells[1].get_text(), years)
+            site_date = update_bad_parse_date_to_site_format(cells[1].get_text(), years)
             home_team = set_home_team(cells[2:4])
             first_team = parse_team_name(cells[2].get_text())
             second_team = parse_team_name(cells[3].get_text())
             score = parse_team_name(cells[4].get_text())
             matches.append(dict(zip(tournament_names, [date, home_team, first_team, second_team, score])))
 
-            element = bot.driver.find_element_by_id(row['id'])
-            sleep(2)
-            element.click()
-            sleep(2)
-            share_data = {'Date': date}
-            match_events = get_match_events(bot, share_data,  1)  # debug
-            storage.save_to_json_file(match_events,
-                                      "match_events_" + '__'.join([date, first_team, second_team]), "match_events")
+            match_events_file_name = "match_events_" + '__'.join([site_date, first_team, second_team])
+            if not storage.is_file_in_project_dir(match_events_file_name, templates.match_event_folder):
+                element = bot.driver.find_element_by_id(row['id'])
+                sleep(2)
+                element.click()
+                sleep(2)
+                share_data = {'Date': date}
+                match_events = get_match_events(bot, share_data,  1)  # debug
+                storage.save_to_json_file(match_events, match_events_file_name, templates.match_event_folder)
 
             if debug:
                 print('Дата: {date}'.format(date=date))

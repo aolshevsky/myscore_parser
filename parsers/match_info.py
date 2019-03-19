@@ -1,4 +1,4 @@
-from myscore_parser import templates, start
+from myscore_parser import templates, start, storage
 from myscore_parser.parsers import player_info, team_info, helpers
 from time import sleep
 import re
@@ -72,6 +72,9 @@ def get_match_teams(bot, debug=0):
 @helpers.go_to_a_new_page
 def get_match_team(bot):
     match_team = team_info.get_team_info(bot)
+    file_name = "team_" + '__'.join(match_team.values())
+    if not storage.is_file_in_project_dir(file_name, templates.teams_folder):
+        storage.save_to_json_file(match_team, file_name, templates.teams_folder)
     return match_team
 
 
