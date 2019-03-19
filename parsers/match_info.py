@@ -42,14 +42,24 @@ def get_participant_name(element):
     return player_ids
 
 
-def get_referee_info(match_soup):
+def get_referee_info(match_soup, is_inserting=False):
     match_info = match_soup.find('div', templates.match_info)
     match_info_content = match_info.find_all('div', templates.match_info_content)
     full_name = match_info_content[0].get_text().split()
-    referee_data = [full_name[2], full_name[1]]
-    referee_data_txt = ['First_Name', 'Last_Name']
+    referee_data = []
+    referee_data_txt = []
+    if is_inserting:
+        referee_data = ['Referee']
+        referee_data_txt = ['Role']
+    referee_data += [full_name[2], full_name[1]]
+    referee_data_txt += ['First_Name', 'Last_Name']
 
     return dict(zip(referee_data_txt, referee_data))
+
+
+def save_referee_data(referee):
+    referee_file_name = 'persons_' + '__'.join(referee.values())
+    storage.save_data(referee, referee_file_name, templates.persons_folder)
 
 
 def get_match_teams(bot, debug=0):
@@ -123,6 +133,11 @@ def get_match_lineups(bot, debug=0):
     return players_team1, players_team2
 
 
+def save_players_teams(players_teams, match_teams):
+    players_team_file_names = ['persons_' + '__'.join(match_teams[i].values()) for i in range(2)]
+    map(storage.save_data, players_teams, players_team_file_names, [templates.persons_folder] * 2)  # testing
+
+
 def get_match_info(bot, share_data, debug=0):
     try:
         match_soup = bot.get_page_source_by_new_url(bot.driver.current_url)
@@ -145,13 +160,13 @@ def get_match_info(bot, share_data, debug=0):
         match_events_txt = ['Match_Time_Template_Name', 'Match_Time', 'Player', 'Event_Template_Name']
 
         players_teams = get_match_lineups(bot, 1)  # debug
-        file_players_team_names = ['persons_' + '__'.join(match_teams[i].values()) for i in range(2)]
-        map(storage.save_data, players_teams, file_players_team_names, [templates.persons_folder]*2)  # testing
+        save_players_teams(players_teams, match_teams)
 
         referee = get_referee_info(match_soup)
+        save_referee_data(get_referee_info(match_soup, True))  # testing
+
         if debug:
             print(bot.driver.current_url)
-            # print("Судья: {referee[0]} {referee[1]}".format(referee=referee))
 
         for ev in match_data.find_all('div', templates.period_row):
             player_ids = []
