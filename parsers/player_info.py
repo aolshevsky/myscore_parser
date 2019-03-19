@@ -32,10 +32,12 @@ def get_player_info(player_info_page, is_base_info=True, debug=0):
         print("Тип игрока: {type}".format(type=player_type))
         print("Трансферы: {transfers}".format(transfers=transfers))
 
-    player_info_data = [f_name, l_name, country, birthday]
-    player_info_data_txt = ["First_Name", "Last_Name", "Country", "Birthday"]
+    player_info_data = [f_name, l_name, birthday]
+    player_info_data_txt = ["First_Name", "Last_Name", "Birthday"]
 
     if not is_base_info:
+        player_info_data.append(country)
+        player_info_data_txt.append('Country')
         player_info_data.append(player_type)
         player_info_data_txt.append('Type')
         player_info_data.append(transfers)

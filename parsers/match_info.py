@@ -73,8 +73,7 @@ def get_match_teams(bot, debug=0):
 def get_match_team(bot):
     match_team = team_info.get_team_info(bot)
     file_name = "team_" + '__'.join(match_team.values())
-    if not storage.is_file_in_project_dir(file_name, templates.teams_folder):
-        storage.save_to_json_file(match_team, file_name, templates.teams_folder)
+    storage.save_data(match_team, file_name, templates.teams_folder)
     return match_team
 
 
@@ -85,6 +84,10 @@ def get_match_lineups(bot, debug=0):
     lineups_data = match_soup.find('table', templates.match_info_lineups)
     all_players = lineups_data.find('tbody').find_all('tr')
     is_main = 1
+
+    players_data_team1 = ['Player']
+    players_data_team2 = ['Player']
+    player_data_txt = ['Role', 'First_Name', 'Last_Name', 'Birthday']
 
     for row in all_players:
         cells = row.find_all('td')
@@ -99,17 +102,25 @@ def get_match_lineups(bot, debug=0):
         player_ids = [helpers.get_id_of_clickable_element(
             cells[i].find('div', templates.match_info_lineups_player))[0] for i in range(2)]
 
-        players = []
+        row_players = []
 
         for p_url in helpers.convert_ids_to_urls(player_ids):
             player_info_page = bot.get_page_source_by_new_url(p_url)
-            players.append(player_info.get_player_info(player_info_page, False))
+            row_players.append(player_info.get_player_info(player_info_page, False))
+
+        players_data_team1 += row_players[0].values()
+        players_data_team2 += row_players[1].values()
 
         if debug:
-            [print("Игрок{ind}: {player}".format(ind=i+1, player=players[i])) for i in range(2)]
+            [print("Игрок{ind}: {player}".format(ind=i+1, player=row_players[i])) for i in range(2)]
             [print("Номер{ind}: {number}".format(ind=i+1, number=numbers[i])) for i in range(2)]
             print("Основной состав: {is_main}".format(is_main=is_main))
             print()
+
+    players_team1 = dict(zip(player_data_txt, players_data_team1))
+    players_team2 = dict(zip(player_data_txt, players_data_team2))
+
+    return players_team1, players_team2
 
 
 def get_match_info(bot, share_data, debug=0):
@@ -132,7 +143,10 @@ def get_match_info(bot, share_data, debug=0):
         match_role_changes_txt = ['Match_Time_Template_Name', 'Match_Time', 'Person_To', 'Person_From']
         match_events = []
         match_events_txt = ['Match_Time_Template_Name', 'Match_Time', 'Player', 'Event_Template_Name']
-        get_match_lineups(bot, 1)  # debug
+
+        players_teams = get_match_lineups(bot, 1)  # debug
+        file_players_team_names = ['persons_' + '__'.join(match_teams[i].values()) for i in range(2)]
+        map(storage.save_data, players_teams, file_players_team_names, [templates.persons_folder]*2)  # testing
 
         referee = get_referee_info(match_soup)
         if debug:

@@ -30,3 +30,8 @@ def is_file_in_project_dir(file_name: str, project_dir: str) -> bool:
     path_file = os.path.join(os.getcwd(), templates.base_dir,
                              project_dir, '{0}.json'.format(re.sub('[:|. ]', '_', file_name)))
     return os.path.isfile(path_file)
+
+
+def save_data(data, file_name: str, project_dir: str):
+    if not is_file_in_project_dir(file_name, project_dir):
+        save_to_json_file(data, file_name, project_dir)

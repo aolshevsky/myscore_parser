@@ -39,3 +39,6 @@ def go_to_a_new_page(f):
         end_parse_page(args[0])
         return res
     return wrapper
+
+
+
