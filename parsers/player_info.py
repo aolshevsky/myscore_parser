@@ -1,4 +1,4 @@
-from myscore_parser import templates
+from myscore_parser import templates, storage
 
 
 def parse_player_info_birthday(player_info):
@@ -67,3 +67,21 @@ def get_player_transfers(player_info_page):
         return []
 
     return transfers
+
+
+def get_players_data_team(row_player):
+    match_players_info_history_txt = ['Country', 'Date']
+    player_data_txt = ['Role', 'First_Name', 'Last_Name', 'Birthday', 'Person_Info_History']
+
+    row_players_pih = []
+    row_players_list = list(row_player.values())
+    row_players_pih.append(dict(zip(match_players_info_history_txt,
+                                    [row_players_list[i] for i in [3, 2]])))
+
+    return dict(zip(player_data_txt, ['Player'] + [row_players_list[i] for i in [0, 1, 2]] + row_players_pih))
+
+
+def save_players_teams(players_teams, match_teams):
+    players_team_file_names = ['persons_Players_' + '__'.join(list(match_teams[i].values())) for i in range(2)]
+    for i in range(len(players_team_file_names)):
+        storage.save_data(players_teams[i], players_team_file_names[i], templates.persons_folder)

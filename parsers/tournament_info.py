@@ -85,7 +85,7 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
                 sleep(2)
                 element.click()
                 sleep(2)
-                share_data = {'Date': date, 'Home_Team': home_team}
+                share_data = {'Date': (date, site_date), 'Home_Team': home_team}
                 match_events = get_match_events(bot, share_data,  1)  # debug
                 storage.save_to_json_file(match_events, match_events_file_name, templates.match_event_folder)
 

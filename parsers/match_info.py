@@ -64,7 +64,6 @@ def save_referee_data(referee):
 
 def get_match_teams(bot, debug=0):
     teams = []
-
     teams_urls = bot.driver.find_elements_by_class_name(templates.match_info_teams_element)
 
     for i in range(2):
@@ -82,12 +81,12 @@ def get_match_teams(bot, debug=0):
 @helpers.go_to_a_new_page
 def get_match_team(bot):
     match_team = team_info.get_team_info(bot)
-    file_name = "team_" + '__'.join(match_team.values())
+    file_name = "team_" + '__'.join(list(match_team.values()))
     storage.save_data(match_team, file_name, templates.teams_folder)
     return match_team
 
 
-def get_match_lineups(bot, match_teams, debug=0):
+def get_match_lineups(bot, match_teams, match_teams_dict, match_date, debug=0):
     match_soup = bot.get_page_source_by_new_url(helpers.change_js_suffix_in_url(
         bot.driver.current_url, templates.match_info_lineups_js), True)
 
@@ -95,9 +94,7 @@ def get_match_lineups(bot, match_teams, debug=0):
     all_players = lineups_data.find('tbody').find_all('tr')
     is_main = 1
 
-    players_data_team1 = ['Player']
-    players_data_team2 = ['Player']
-    player_data_txt = ['Role', 'First_Name', 'Last_Name', 'Birthday']
+    players_data_team1, players_data_team2 = [], []
     match_players_txt = ['First_Name', 'Second_Name', 'Birthday', 'Player_Type', 'Number',
                          'Is_Main', 'First_Team', 'Second_Team']
     match_players = []
@@ -122,10 +119,11 @@ def get_match_lineups(bot, match_teams, debug=0):
             player_info_page = bot.get_page_source_by_new_url(p_url)
             row_players.append(player_info.get_player_info(player_info_page, False))
 
-        players_data_team1 += row_players[0].values()
-        players_data_team2 += row_players[1].values()
-        row_match_player.append([[row_players[i].values()[j] for j in [0, 1, 2, 4]] + [numbers[i], is_main] +
-                                match_teams for i in range(2)])
+        players_data_team1.append(player_info.get_players_data_team(row_players[0]))
+        players_data_team2.append(player_info.get_players_data_team(row_players[1]))
+
+        row_match_player += [dict(zip(match_players_txt, [list(row_players[i].values())[j] for j in [0, 1, 2, 4]] +
+                                      [numbers[i], is_main] + match_teams)) for i in range(2)]
         match_players += row_match_player
 
         if debug:
@@ -134,39 +132,31 @@ def get_match_lineups(bot, match_teams, debug=0):
             print("Основной состав: {is_main}".format(is_main=is_main))
             print()
 
-    save_match_players(dict(zip(match_players_txt, match_players)), match_teams)
+    save_match_players(match_players, match_teams_dict, match_date)
 
-    players_team1 = dict(zip(player_data_txt, players_data_team1))
-    players_team2 = dict(zip(player_data_txt, players_data_team2))
-
-    return players_team1, players_team2
+    return players_data_team1, players_data_team2
 
 
-def save_players_teams(players_teams, match_teams):
-    players_team_file_names = ['persons_' + '__'.join(match_teams[i].values()) for i in range(2)]
-    map(storage.save_data, players_teams, players_team_file_names, [templates.persons_folder] * 2)  # testing
-
-
-def save_match_referee(match_referee: dict):
+def save_match_referee(match_referee: dict, match_date: str):
     match_referee_file_name = 'match_referee_' + '__'.join([match_referee['First_Team']['Name'],
                                                             match_referee['Second_Team']['Name'],
-                                                            match_referee['Date'],
+                                                            match_date,
                                                             match_referee['Last_Name']])
-    storage.save_data(match_referee, match_referee_file_name, templates.match_referee_folder)  # testing
+    storage.save_data(match_referee, match_referee_file_name, templates.match_referee_folder)
 
 
-def save_match_players(match_players: dict, match_teams: dict):
+def save_match_players(match_players: list, match_teams: dict, match_date: str):
     match_players_file_name = 'match_players_' + '__'.join([match_teams['First_Team']['Name'],
                                                             match_teams['Second_Team']['Name'],
-                                                            match_teams['Date']])
-    storage.save_data(match_players, match_players_file_name, templates.match_players_folder)  # testing
+                                                            match_date])
+    storage.save_data(match_players, match_players_file_name, templates.match_players_folder)
 
 
-def save_match(match: dict):
+def save_match(match: dict, match_date: str):
     match_file_name = 'match_' + '__'.join([match['First_Team']['Name'],
                                             match['Second_Team']['Name'],
-                                            match['Date']])
-    storage.save_data(match, match_file_name, templates.match_folder)  # testing
+                                            match_date])
+    storage.save_data(match, match_file_name, templates.match_folder)
 
 
 def get_match_info(bot, share_data, debug=0):
@@ -177,7 +167,7 @@ def get_match_info(bot, share_data, debug=0):
 
         match_teams = get_match_teams(bot, 1)  # debug
 
-        match_date = share_data['Date']
+        match_date, site_date = share_data['Date']
         match_data_for_match_events = match_teams + [match_date]
         match_data_for_match_events_txt = ['First_Team', 'Second_Team', 'Date']
         match_for_match_events = dict(zip(match_data_for_match_events_txt, match_data_for_match_events))
@@ -192,18 +182,18 @@ def get_match_info(bot, share_data, debug=0):
         match_referee_txt = ['First_Name', 'Last_Name', 'First_Team', 'Second_Team', 'Date_Time', 'Is_Main']
         match_referee = []
         match = match_teams
-        match += team_info.get_team_data_by_name(match_teams, share_data['Home_Team']) + [match_date]
+        match += [team_info.get_team_data_by_name(match_teams, share_data['Home_Team'])] + [match_date]
         match_txt = ['First_Team', 'Second_Team', 'Home_Team', 'Date_Time']
 
-        players_teams = get_match_lineups(bot, match_teams, 1)  # debug
-        save_players_teams(players_teams, match_teams)
+        players_teams = get_match_lineups(bot, match_teams, match_for_match_events, site_date, 1)  # debug
+        player_info.save_players_teams(players_teams, match_teams)
 
         referee = get_referee_info(match_soup)
         match_referee += referee.values()
         match_referee += match_data_for_match_events + [1]
-        save_referee_data(get_referee_info(match_soup, True))  # testing
-        save_match_referee(dict(zip(match_referee_txt, match_referee)))
-        save_match(dict(zip(match_txt, match)))
+        save_referee_data(get_referee_info(match_soup, True))
+        save_match_referee(dict(zip(match_referee_txt, match_referee)), site_date)
+        save_match(dict(zip(match_txt, match)), site_date)
 
         if debug:
             print(bot.driver.current_url)
