@@ -1,0 +1,578 @@
+[
+    {
+        "First_Name": "",
+        "Second_Name": "Бернард",
+        "Birthday": "08.09.1992",
+        "Player_Type": "Полузащитник",
+        "Number": "20",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Азар",
+        "Second_Name": "Эден",
+        "Birthday": "07.01.1991",
+        "Player_Type": "Полузащитник",
+        "Number": "10",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Гомеш",
+        "Second_Name": "Андре",
+        "Birthday": "30.07.1993",
+        "Player_Type": "Полузащитник",
+        "Number": "8",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Алонсо",
+        "Second_Name": "Маркос",
+        "Birthday": "28.12.1990",
+        "Player_Type": "Защитник",
+        "Number": "3",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Гуйе",
+        "Second_Name": "Идрисса",
+        "Birthday": "26.09.1989",
+        "Player_Type": "Полузащитник",
+        "Number": "17",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Аррисабалага",
+        "Second_Name": "Кепа",
+        "Birthday": "03.10.1994",
+        "Player_Type": "Вратарь",
+        "Number": "1",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Динь",
+        "Second_Name": "Лукас",
+        "Birthday": "20.07.1993",
+        "Player_Type": "Защитник",
+        "Number": "12",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Аспиликуэта",
+        "Second_Name": "Сесар",
+        "Birthday": "28.08.1989",
+        "Player_Type": "Защитник",
+        "Number": "28",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Кальверт-Льюин",
+        "Second_Name": "Доминик",
+        "Birthday": "16.03.1997",
+        "Player_Type": "Нападающий",
+        "Number": "29",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Баркли",
+        "Second_Name": "Росс",
+        "Birthday": "05.12.1993",
+        "Player_Type": "Полузащитник",
+        "Number": "8",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Кин",
+        "Second_Name": "Майкл",
+        "Birthday": "11.01.1993",
+        "Player_Type": "Защитник",
+        "Number": "4",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "",
+        "Second_Name": "Жоржиньо",
+        "Birthday": "20.12.1991",
+        "Player_Type": "Полузащитник",
+        "Number": "5",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Коулмэн",
+        "Second_Name": "Шимус",
+        "Birthday": "11.10.1988",
+        "Player_Type": "Защитник",
+        "Number": "23",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Игуаин",
+        "Second_Name": "Гонсало",
+        "Birthday": "10.12.1987",
+        "Player_Type": "Нападающий",
+        "Number": "9",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Мина",
+        "Second_Name": "Йерри",
+        "Birthday": "23.09.1994",
+        "Player_Type": "Защитник",
+        "Number": "13",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Канте",
+        "Second_Name": "Нголо",
+        "Birthday": "29.03.1991",
+        "Player_Type": "Полузащитник",
+        "Number": "7",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Пикфорд",
+        "Second_Name": "Джордан",
+        "Birthday": "07.03.1994",
+        "Player_Type": "Вратарь",
+        "Number": "1",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Луис",
+        "Second_Name": "Давид",
+        "Birthday": "22.04.1987",
+        "Player_Type": "Защитник",
+        "Number": "30",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "",
+        "Second_Name": "Ричарлисон",
+        "Birthday": "10.05.1997",
+        "Player_Type": "Нападающий",
+        "Number": "30",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "",
+        "Second_Name": "Педро",
+        "Birthday": "28.07.1987",
+        "Player_Type": "Полузащитник",
+        "Number": "11",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Сигурдссон",
+        "Second_Name": "Гильфи",
+        "Birthday": "09.09.1989",
+        "Player_Type": "Полузащитник",
+        "Number": "10",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Рудигер",
+        "Second_Name": "Антонио",
+        "Birthday": "03.03.1993",
+        "Player_Type": "Защитник",
+        "Number": "2",
+        "Is_Main": 1,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Lookman",
+        "Second_Name": "Ademola",
+        "Birthday": "20.10.1997",
+        "Player_Type": "Нападающий",
+        "Number": "31",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Hudson-Odoi",
+        "Second_Name": "Каллам",
+        "Birthday": "07.11.2000",
+        "Player_Type": "Полузащитник",
+        "Number": "20",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Бейнс",
+        "Second_Name": "Лейтон",
+        "Birthday": "11.12.1984",
+        "Player_Type": "Защитник",
+        "Number": "3",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "",
+        "Second_Name": "Виллиан",
+        "Birthday": "09.08.1988",
+        "Player_Type": "Полузащитник",
+        "Number": "22",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Дэвис",
+        "Second_Name": "Том",
+        "Birthday": "30.06.1998",
+        "Player_Type": "Полузащитник",
+        "Number": "26",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Жиру",
+        "Second_Name": "Оливье",
+        "Birthday": "30.09.1986",
+        "Player_Type": "Нападающий",
+        "Number": "18",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Стекеленбург",
+        "Second_Name": "Мартен",
+        "Birthday": "22.09.1982",
+        "Player_Type": "Вратарь",
+        "Number": "22",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Кабайеро",
+        "Second_Name": "Вильфредо",
+        "Birthday": "28.09.1981",
+        "Player_Type": "Вратарь",
+        "Number": "13",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Тосун",
+        "Second_Name": "Дженк",
+        "Birthday": "07.06.1991",
+        "Player_Type": "Нападающий",
+        "Number": "14",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Ковачич",
+        "Second_Name": "Матео",
+        "Birthday": "06.05.1994",
+        "Player_Type": "Полузащитник",
+        "Number": "17",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Уолкотт",
+        "Second_Name": "Тео",
+        "Birthday": "16.03.1989",
+        "Player_Type": "Нападающий",
+        "Number": "11",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Кристенсен",
+        "Second_Name": "Андреас",
+        "Birthday": "10.04.1996",
+        "Player_Type": "Защитник",
+        "Number": "27",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Шнайдерлин",
+        "Second_Name": "Морган",
+        "Birthday": "08.11.1989",
+        "Player_Type": "Полузащитник",
+        "Number": "18",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    },
+    {
+        "First_Name": "Лофтус-Чик",
+        "Second_Name": "Рубен",
+        "Birthday": "23.01.1996",
+        "Player_Type": "Полузащитник",
+        "Number": "12",
+        "Is_Main": 0,
+        "First_Team": {
+            "Name": "Эвертон",
+            "Country": "Англия"
+        },
+        "Second_Team": {
+            "Name": "Челси",
+            "Country": "Англия"
+        }
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "First_Team": {
+        "Name": "Эвертон",
+        "Country": "Англия"
+    },
+    "Second_Team": {
+        "Name": "Челси",
+        "Country": "Англия"
+    },
+    "Home_Team": {
+        "Name": "Эвертон",
+        "Country": "Англия"
+    },
+    "Date_Time": "2019-3-17T19:30:00.000"
+}

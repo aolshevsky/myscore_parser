@@ -17,7 +17,6 @@
             "Player": {
                 "First_Name": "Алонсо",
                 "Last_Name": "Маркос",
-                "Country": "Испания",
                 "Birthday": "28.12.1990"
             },
             "Event_Template_Name": "Задержка"
@@ -28,7 +27,6 @@
             "Player": {
                 "First_Name": "",
                 "Last_Name": "Ричарлисон",
-                "Country": "Бразилия",
                 "Birthday": "10.05.1997"
             },
             "Event_Template_Name": "Гол"
@@ -39,7 +37,6 @@
             "Player": {
                 "First_Name": "Гомеш",
                 "Last_Name": "Андре",
-                "Country": "Португалия",
                 "Birthday": "30.07.1993"
             },
             "Event_Template_Name": "Подножка"
@@ -50,7 +47,6 @@
             "Player": {
                 "First_Name": "Рудигер",
                 "Last_Name": "Антонио",
-                "Country": "Германия",
                 "Birthday": "03.03.1993"
             },
             "Event_Template_Name": "Толчок"
@@ -61,7 +57,6 @@
             "Player": {
                 "First_Name": "Сигурдссон",
                 "Last_Name": "Гильфи",
-                "Country": "Исландия",
                 "Birthday": "09.09.1989"
             },
             "Event_Template_Name": "Незабитый пенальти"
@@ -72,7 +67,6 @@
             "Player": {
                 "First_Name": "Сигурдссон",
                 "Last_Name": "Гильфи",
-                "Country": "Исландия",
                 "Birthday": "09.09.1989"
             },
             "Event_Template_Name": "Гол"
@@ -85,7 +79,6 @@
             "Player": {
                 "First_Name": "Алонсо",
                 "Last_Name": "Маркос",
-                "Country": "Испания",
                 "Birthday": "28.12.1990"
             },
             "Referee": {
@@ -101,7 +94,6 @@
             "Player": {
                 "First_Name": "Гомеш",
                 "Last_Name": "Андре",
-                "Country": "Португалия",
                 "Birthday": "30.07.1993"
             },
             "Referee": {
@@ -117,7 +109,6 @@
             "Player": {
                 "First_Name": "Рудигер",
                 "Last_Name": "Антонио",
-                "Country": "Германия",
                 "Birthday": "03.03.1993"
             },
             "Referee": {
@@ -135,13 +126,11 @@
             "Person_To": {
                 "First_Name": "Лофтус-Чик",
                 "Last_Name": "Рубен",
-                "Country": "Англия",
                 "Birthday": "23.01.1996"
             },
             "Person_From": {
                 "First_Name": "Баркли",
                 "Last_Name": "Росс",
-                "Country": "Англия",
                 "Birthday": "05.12.1993"
             }
         },
@@ -151,13 +140,11 @@
             "Person_To": {
                 "First_Name": "Жиру",
                 "Last_Name": "Оливье",
-                "Country": "Франция",
                 "Birthday": "30.09.1986"
             },
             "Person_From": {
                 "First_Name": "Игуаин",
                 "Last_Name": "Гонсало",
-                "Country": "Аргентина",
                 "Birthday": "10.12.1987"
             }
         },
@@ -167,13 +154,11 @@
             "Person_To": {
                 "First_Name": "Шнайдерлин",
                 "Last_Name": "Морган",
-                "Country": "Франция",
                 "Birthday": "08.11.1989"
             },
             "Person_From": {
                 "First_Name": "Гомеш",
                 "Last_Name": "Андре",
-                "Country": "Португалия",
                 "Birthday": "30.07.1993"
             }
         },
@@ -183,13 +168,11 @@
             "Person_To": {
                 "First_Name": "Hudson-Odoi",
                 "Last_Name": "Каллам",
-                "Country": "Англия",
                 "Birthday": "07.11.2000"
             },
             "Person_From": {
                 "First_Name": "",
                 "Last_Name": "Жоржиньо",
-                "Country": "Италия",
                 "Birthday": "20.12.1991"
             }
         },
@@ -199,13 +182,11 @@
             "Person_To": {
                 "First_Name": "Уолкотт",
                 "Last_Name": "Тео",
-                "Country": "Англия",
                 "Birthday": "16.03.1989"
             },
             "Person_From": {
                 "First_Name": "",
                 "Last_Name": "Бернард",
-                "Country": "Бразилия",
                 "Birthday": "08.09.1992"
             }
         },
@@ -215,13 +196,11 @@
             "Person_To": {
                 "First_Name": "Дэвис",
                 "Last_Name": "Том",
-                "Country": "Англия",
                 "Birthday": "30.06.1998"
             },
             "Person_From": {
                 "First_Name": "Сигурдссон",
                 "Last_Name": "Гильфи",
-                "Country": "Исландия",
                 "Birthday": "09.09.1989"
             }
         }

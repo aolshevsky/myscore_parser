@@ -1,0 +1,182 @@
+[
+    {
+        "Role": "Player",
+        "First_Name": "Азар",
+        "Last_Name": "Эден",
+        "Birthday": "07.01.1991",
+        "Person_Info_History": {
+            "Country": "Бельгия",
+            "Date": "07.01.1991"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Алонсо",
+        "Last_Name": "Маркос",
+        "Birthday": "28.12.1990",
+        "Person_Info_History": {
+            "Country": "Испания",
+            "Date": "28.12.1990"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Аррисабалага",
+        "Last_Name": "Кепа",
+        "Birthday": "03.10.1994",
+        "Person_Info_History": {
+            "Country": "Испания",
+            "Date": "03.10.1994"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Аспиликуэта",
+        "Last_Name": "Сесар",
+        "Birthday": "28.08.1989",
+        "Person_Info_History": {
+            "Country": "Испания",
+            "Date": "28.08.1989"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Баркли",
+        "Last_Name": "Росс",
+        "Birthday": "05.12.1993",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "05.12.1993"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "",
+        "Last_Name": "Жоржиньо",
+        "Birthday": "20.12.1991",
+        "Person_Info_History": {
+            "Country": "Италия",
+            "Date": "20.12.1991"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Игуаин",
+        "Last_Name": "Гонсало",
+        "Birthday": "10.12.1987",
+        "Person_Info_History": {
+            "Country": "Аргентина",
+            "Date": "10.12.1987"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Канте",
+        "Last_Name": "Нголо",
+        "Birthday": "29.03.1991",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "29.03.1991"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Луис",
+        "Last_Name": "Давид",
+        "Birthday": "22.04.1987",
+        "Person_Info_History": {
+            "Country": "Бразилия",
+            "Date": "22.04.1987"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "",
+        "Last_Name": "Педро",
+        "Birthday": "28.07.1987",
+        "Person_Info_History": {
+            "Country": "Испания",
+            "Date": "28.07.1987"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Рудигер",
+        "Last_Name": "Антонио",
+        "Birthday": "03.03.1993",
+        "Person_Info_History": {
+            "Country": "Германия",
+            "Date": "03.03.1993"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Hudson-Odoi",
+        "Last_Name": "Каллам",
+        "Birthday": "07.11.2000",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "07.11.2000"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "",
+        "Last_Name": "Виллиан",
+        "Birthday": "09.08.1988",
+        "Person_Info_History": {
+            "Country": "Бразилия",
+            "Date": "09.08.1988"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Жиру",
+        "Last_Name": "Оливье",
+        "Birthday": "30.09.1986",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "30.09.1986"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Кабайеро",
+        "Last_Name": "Вильфредо",
+        "Birthday": "28.09.1981",
+        "Person_Info_History": {
+            "Country": "Аргентина",
+            "Date": "28.09.1981"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Ковачич",
+        "Last_Name": "Матео",
+        "Birthday": "06.05.1994",
+        "Person_Info_History": {
+            "Country": "Хорватия",
+            "Date": "06.05.1994"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Кристенсен",
+        "Last_Name": "Андреас",
+        "Birthday": "10.04.1996",
+        "Person_Info_History": {
+            "Country": "Дания",
+            "Date": "10.04.1996"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Лофтус-Чик",
+        "Last_Name": "Рубен",
+        "Birthday": "23.01.1996",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "23.01.1996"
+        }
+    }
+]

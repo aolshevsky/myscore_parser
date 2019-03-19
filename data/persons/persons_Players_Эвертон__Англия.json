@@ -1,0 +1,182 @@
+[
+    {
+        "Role": "Player",
+        "First_Name": "",
+        "Last_Name": "Бернард",
+        "Birthday": "08.09.1992",
+        "Person_Info_History": {
+            "Country": "Бразилия",
+            "Date": "08.09.1992"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Гомеш",
+        "Last_Name": "Андре",
+        "Birthday": "30.07.1993",
+        "Person_Info_History": {
+            "Country": "Португалия",
+            "Date": "30.07.1993"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Гуйе",
+        "Last_Name": "Идрисса",
+        "Birthday": "26.09.1989",
+        "Person_Info_History": {
+            "Country": "Сенегал",
+            "Date": "26.09.1989"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Динь",
+        "Last_Name": "Лукас",
+        "Birthday": "20.07.1993",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "20.07.1993"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Кальверт-Льюин",
+        "Last_Name": "Доминик",
+        "Birthday": "16.03.1997",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "16.03.1997"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Кин",
+        "Last_Name": "Майкл",
+        "Birthday": "11.01.1993",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "11.01.1993"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Коулмэн",
+        "Last_Name": "Шимус",
+        "Birthday": "11.10.1988",
+        "Person_Info_History": {
+            "Country": "Ирландия",
+            "Date": "11.10.1988"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Мина",
+        "Last_Name": "Йерри",
+        "Birthday": "23.09.1994",
+        "Person_Info_History": {
+            "Country": "Колумбия",
+            "Date": "23.09.1994"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Пикфорд",
+        "Last_Name": "Джордан",
+        "Birthday": "07.03.1994",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "07.03.1994"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "",
+        "Last_Name": "Ричарлисон",
+        "Birthday": "10.05.1997",
+        "Person_Info_History": {
+            "Country": "Бразилия",
+            "Date": "10.05.1997"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Сигурдссон",
+        "Last_Name": "Гильфи",
+        "Birthday": "09.09.1989",
+        "Person_Info_History": {
+            "Country": "Исландия",
+            "Date": "09.09.1989"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Lookman",
+        "Last_Name": "Ademola",
+        "Birthday": "20.10.1997",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "20.10.1997"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Бейнс",
+        "Last_Name": "Лейтон",
+        "Birthday": "11.12.1984",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "11.12.1984"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Дэвис",
+        "Last_Name": "Том",
+        "Birthday": "30.06.1998",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "30.06.1998"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Стекеленбург",
+        "Last_Name": "Мартен",
+        "Birthday": "22.09.1982",
+        "Person_Info_History": {
+            "Country": "Нидерланды",
+            "Date": "22.09.1982"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Тосун",
+        "Last_Name": "Дженк",
+        "Birthday": "07.06.1991",
+        "Person_Info_History": {
+            "Country": "Турция",
+            "Date": "07.06.1991"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Уолкотт",
+        "Last_Name": "Тео",
+        "Birthday": "16.03.1989",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "16.03.1989"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Шнайдерлин",
+        "Last_Name": "Морган",
+        "Birthday": "08.11.1989",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "08.11.1989"
+        }
+    }
+]

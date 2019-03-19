@@ -1,0 +1,14 @@
+{
+    "First_Name": "Э.",
+    "Last_Name": "Тэйлор",
+    "First_Team": {
+        "Name": "Эвертон",
+        "Country": "Англия"
+    },
+    "Second_Team": {
+        "Name": "Челси",
+        "Country": "Англия"
+    },
+    "Date_Time": "2019-3-17T19:30:00.000",
+    "Is_Main": 1
+}
