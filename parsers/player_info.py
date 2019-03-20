@@ -6,7 +6,7 @@ def parse_player_info_birthday(player_info):
     row_birthday = player_info.find('div', templates.player_info_birthdate)
     if row_birthday:
         reg = re.compile(r'[0-9]+')
-        b_time = list(reg.findall(row_birthday))
+        b_time = list(reg.findall(row_birthday.text[-12:-2]))
         return '{b_time[1]}.{b_time[0]}.{b_time[2]}'.format(b_time=b_time)
 
 
@@ -84,7 +84,7 @@ def get_players_data_team(row_player):
     return dict(zip(player_data_txt, ['Player'] + [row_players_list[i] for i in [0, 1, 2]] + row_players_pih))
 
 
-def save_players_teams(players_teams, match_teams):
-    players_team_file_names = ['persons_Players_' + '__'.join(list(match_teams[i].values())) for i in range(2)]
+def save_players_teams(players_teams, match_teams, b_date):
+    players_team_file_names = ['persons_Players_' + '__'.join(list(match_teams[i].values()) + [b_date]) for i in range(2)]
     for i in range(len(players_team_file_names)):
         storage.save_data(players_teams[i], players_team_file_names[i], templates.persons_folder)

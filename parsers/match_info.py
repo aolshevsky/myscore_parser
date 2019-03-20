@@ -188,7 +188,7 @@ def get_match_info(bot, share_data, debug=0):
         match_txt = ['First_Team', 'Second_Team', 'Home_Team', 'Date_Time']
 
         players_teams = get_match_lineups(bot, match_teams, match_for_match_events, site_date, 1)  # debug
-        player_info.save_players_teams(players_teams, match_teams)
+        player_info.save_players_teams(players_teams, match_teams, site_date)
 
         referee = get_referee_info(match_soup)
         match_referee += referee.values()

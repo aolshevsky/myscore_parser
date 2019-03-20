@@ -37,9 +37,9 @@ def update_bad_parse_date(date: str, years: tuple) -> str:
     l_time = list(map(lambda x: int(x), reg.findall(date)))
     l_time_str = list(reg.findall(date))
     if l_time[1] > 7:
-        return '-'.join([years[0], l_time[1], l_time[0]]) + 'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
+        return '-'.join([years[0], l_time_str[1], l_time_str[0]]) + 'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
 
-    return '-'.join([years[1], str(l_time[1]), str(l_time[0])]) + 'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
+    return '-'.join([years[1], l_time_str[1], l_time_str[0]]) + 'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
 
 
 def update_bad_parse_date_to_site_format(date: str, years: tuple) -> str:
