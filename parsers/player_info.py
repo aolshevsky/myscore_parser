@@ -1,10 +1,13 @@
 from myscore_parser import templates, storage
+import re
 
 
 def parse_player_info_birthday(player_info):
     row_birthday = player_info.find('div', templates.player_info_birthdate)
     if row_birthday:
-        return row_birthday.text[-12:-2]
+        reg = re.compile(r'[0-9]+')
+        b_time = list(reg.findall(row_birthday))
+        return '{b_time[1]}.{b_time[0]}.{b_time[2]}'.format(b_time=b_time)
 
 
 def parse_player_info_fullname(player_info):

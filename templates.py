@@ -46,6 +46,7 @@ team_info_country_name = {'class', 'tournament'}
 
 # Folder name
 base_dir = 'data'
+base_db_dir = 'db_data'
 tournament_folder = 'tournaments'
 match_folder = 'matches'
 match_event_folder = 'match_events'

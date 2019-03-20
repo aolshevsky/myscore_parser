@@ -137,11 +137,12 @@ def get_match_lineups(bot, match_teams, match_teams_dict, match_date, debug=0):
     return players_data_team1, players_data_team2
 
 
-def save_match_referee(match_referee: dict, match_date: str):
-    match_referee_file_name = 'match_referee_' + '__'.join([match_referee['First_Team']['Name'],
-                                                            match_referee['Second_Team']['Name'],
+def save_match_referee(match_referee: list, match_date: str):
+    match_referee_dict = match_referee[0]
+    match_referee_file_name = 'match_referee_' + '__'.join([match_referee_dict['First_Team']['Name'],
+                                                            match_referee_dict['Second_Team']['Name'],
                                                             match_date,
-                                                            match_referee['Last_Name']])
+                                                            match_referee_dict['Last_Name']])
     storage.save_data(match_referee, match_referee_file_name, templates.match_referee_folder)
 
 
@@ -152,9 +153,10 @@ def save_match_players(match_players: list, match_teams: dict, match_date: str):
     storage.save_data(match_players, match_players_file_name, templates.match_players_folder)
 
 
-def save_match(match: dict, match_date: str):
-    match_file_name = 'match_' + '__'.join([match['First_Team']['Name'],
-                                            match['Second_Team']['Name'],
+def save_match(match: list, match_date: str):
+    match_dict = match[0]
+    match_file_name = 'match_' + '__'.join([match_dict['First_Team']['Name'],
+                                            match_dict['Second_Team']['Name'],
                                             match_date])
     storage.save_data(match, match_file_name, templates.match_folder)
 
@@ -192,8 +194,12 @@ def get_match_info(bot, share_data, debug=0):
         match_referee += referee.values()
         match_referee += match_data_for_match_events + [1]
         save_referee_data(get_referee_info(match_soup, True))
-        save_match_referee(dict(zip(match_referee_txt, match_referee)), site_date)
-        save_match(dict(zip(match_txt, match)), site_date)
+        matches = []
+        match_referees = []
+        matches.append(dict(zip(match_txt, match)))
+        match_referees.append(dict(zip(match_referee_txt, match_referee)))
+        save_match_referee(match_referees, site_date)
+        save_match(matches, site_date)
 
         if debug:
             print(bot.driver.current_url)

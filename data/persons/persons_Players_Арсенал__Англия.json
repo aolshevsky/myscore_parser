@@ -1,0 +1,182 @@
+[
+    {
+        "Role": "Player",
+        "First_Name": "Джака",
+        "Last_Name": "Гранит",
+        "Birthday": "27.09.1992",
+        "Person_Info_History": {
+            "Country": "Швейцария",
+            "Date": "27.09.1992"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Колашинац",
+        "Last_Name": "Саед",
+        "Birthday": "20.06.1993",
+        "Person_Info_History": {
+            "Country": "Босния и Герцеговина",
+            "Date": "20.06.1993"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Косьельни",
+        "Last_Name": "Лоран",
+        "Birthday": "10.09.1985",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "10.09.1985"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Лакасетт",
+        "Last_Name": "Александр",
+        "Birthday": "28.05.1991",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "28.05.1991"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Лено",
+        "Last_Name": "Бернд",
+        "Birthday": "04.03.1992",
+        "Person_Info_History": {
+            "Country": "Германия",
+            "Date": "04.03.1992"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Монреаль",
+        "Last_Name": "Начо",
+        "Birthday": "26.02.1986",
+        "Person_Info_History": {
+            "Country": "Испания",
+            "Date": "26.02.1986"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Мэйтленд-Найлс",
+        "Last_Name": "Эйнсли",
+        "Birthday": "29.08.1997",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "29.08.1997"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Обамеянг",
+        "Last_Name": "Пьер",
+        "Birthday": "18.06.1989",
+        "Person_Info_History": {
+            "Country": "Габон",
+            "Date": "18.06.1989"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Озил",
+        "Last_Name": "Месут",
+        "Birthday": "15.10.1988",
+        "Person_Info_History": {
+            "Country": "Германия",
+            "Date": "15.10.1988"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Рэмзи",
+        "Last_Name": "Арон",
+        "Birthday": "26.12.1990",
+        "Person_Info_History": {
+            "Country": "Уэльс",
+            "Date": "26.12.1990"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "",
+        "Last_Name": "Сократис",
+        "Birthday": "09.06.1988",
+        "Person_Info_History": {
+            "Country": "Греция",
+            "Date": "09.06.1988"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Guendouzi",
+        "Last_Name": "Маттео",
+        "Birthday": "14.04.1999",
+        "Person_Info_History": {
+            "Country": "Франция",
+            "Date": "14.04.1999"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Ивоби",
+        "Last_Name": "Алекс",
+        "Birthday": "03.05.1996",
+        "Person_Info_History": {
+            "Country": "Нигерия",
+            "Date": "03.05.1996"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Мустафи",
+        "Last_Name": "Шкодран",
+        "Birthday": "17.04.1992",
+        "Person_Info_History": {
+            "Country": "Германия",
+            "Date": "17.04.1992"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Нкетиа",
+        "Last_Name": "Эдвард",
+        "Birthday": "30.05.1999",
+        "Person_Info_History": {
+            "Country": "Англия",
+            "Date": "30.05.1999"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Суарес",
+        "Last_Name": "Денис",
+        "Birthday": "06.01.1994",
+        "Person_Info_History": {
+            "Country": "Испания",
+            "Date": "06.01.1994"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Чех",
+        "Last_Name": "Петр",
+        "Birthday": "20.05.1982",
+        "Person_Info_History": {
+            "Country": "Чехия",
+            "Date": "20.05.1982"
+        }
+    },
+    {
+        "Role": "Player",
+        "First_Name": "Эль-Ненни",
+        "Last_Name": "Мохамед",
+        "Birthday": "11.07.1992",
+        "Person_Info_History": {
+            "Country": "Египет",
+            "Date": "11.07.1992"
+        }
+    }
+]
