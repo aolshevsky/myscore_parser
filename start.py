@@ -37,26 +37,26 @@ class Bot:
 
 
 def main():
-    # tournament_url = 'https://www.myscore.com.ua/football/england/premier-league/results/'
-    # bot = Bot(tournament_url)
-    #
-    # element = bot.driver.find_element_by_xpath(templates.tournament_info_get_more_matches)
-    #
-    # while True:
-    #     try:
-    #         element.click()
-    #         sleep(2)
-    #     except Exception as e:
-    #         print(e)
-    #         break
-    #
-    # tournament_soup = bot.get_page_soup()
-    #
-    # print(*tournament_info.get_tournament_matches(bot, tournament_soup, 1), sep='\n')
-    #
-    # bot.driver.quit()
+    tournament_url = 'https://www.myscore.com.ua/football/england/premier-league/results/'
+    bot = Bot(tournament_url)
 
-    storage.concat_data_files()
+    element = bot.driver.find_element_by_xpath(templates.tournament_info_get_more_matches)
+
+    while True:
+        try:
+            element.click()
+            sleep(2)
+        except Exception as e:
+            print(e)
+            break
+
+    tournament_soup = bot.get_page_soup()
+
+    print(*tournament_info.get_tournament_matches(bot, tournament_soup, 1), sep='\n')
+
+    bot.driver.quit()
+
+    # storage.concat_data_files()
 
 
 if __name__ == '__main__':

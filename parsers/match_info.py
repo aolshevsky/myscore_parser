@@ -190,7 +190,7 @@ def get_match_info(bot, share_data, debug=0):
         match += [team_info.get_team_data_by_name(match_teams, share_data['Home_Team'])] + [match_date]
         match_txt = ['First_Team', 'Second_Team', 'Home_Team', 'Date_Time']
 
-        full_info_players_teams, players_teams = get_match_lineups(bot, match_teams,
+        full_info_players_teams, players_teams = get_match_lineups(bot, match_data_for_match_events,
                                                                    match_for_match_events, site_date, 1)
         player_info.save_players_teams(players_teams, match_teams, site_date,
                                        templates.persons_folder)
