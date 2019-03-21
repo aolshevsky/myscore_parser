@@ -96,7 +96,7 @@ def get_match_lineups(bot, match_teams, match_teams_dict, match_date, debug=0):
     players_data_team1, players_data_team2 = [], []
     full_info_players_data_team1, full_info_players_data_team2 = [], []
     match_players_txt = ['First_Name', 'Second_Name', 'Birthday', 'Player_Type', 'Number',
-                         'Is_Main', 'First_Team', 'Second_Team']
+                         'Is_Main', 'First_Team', 'Second_Team', 'Date_Time']
     match_players = []
 
     for row in all_players:
