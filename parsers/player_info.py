@@ -1,13 +1,11 @@
 from myscore_parser import templates, storage
-import re
+from myscore_parser.parsers import helpers, team_info
 
 
 def parse_player_info_birthday(player_info):
     row_birthday = player_info.find('div', templates.player_info_birthdate)
     if row_birthday:
-        reg = re.compile(r'[0-9]+')
-        b_time = list(reg.findall(row_birthday.text[-12:-2]))
-        return '{b_time[1]}.{b_time[0]}.{b_time[2]}'.format(b_time=b_time)
+        return helpers.swap_day_month_in_date(row_birthday.text[-12:-2])
 
 
 def parse_player_info_fullname(player_info):
@@ -22,12 +20,14 @@ def parse_transfer_team_name(team_name: str):
 
 
 def get_player_info(player_info_page, is_base_info=True, debug=0):
-    player_info = player_info_page.find('div', templates.player_info_block)
+    player_info = player_info_page\
+        .find('div', templates.player_info_block)
     f_name, l_name = parse_player_info_fullname(player_info_page)
     country = player_info.find('div', templates.player_info_country).get_text()
     player_type = player_info.find('div', templates.player_info_type_name).get_text()
     birthday = parse_player_info_birthday(player_info)
     transfers = get_player_transfers(player_info_page)
+    injuries = get_player_injuries(player_info_page)
     if debug:
         print("Игрок\nИмя: {f_name}\nФамилия: {l_name}".format(f_name=f_name, l_name=l_name))
         print("Страна: {country}".format(country=country))
@@ -43,48 +43,98 @@ def get_player_info(player_info_page, is_base_info=True, debug=0):
         player_info_data_txt.append('Country')
         player_info_data.append(player_type)
         player_info_data_txt.append('Type')
+        player_info_data.append(injuries)
+        player_info_data_txt.append("Injury")
         player_info_data.append(transfers)
-        player_info_data_txt.append("Transfers")
+        player_info_data_txt.append("Movement")
+
     player = dict(zip(player_info_data_txt, player_info_data))
     return player
 
 
 def get_player_transfers(player_info_page):
     transfers = []
-    transfer_names = ['Date', 'Team_From', 'Team_To', 'Transfer_Type']
+    transfer_names = ['Date', 'TeamFrom', 'TeamTo', 'Type']
+    transfer_team_txt = ['Name', 'Country']
     try:
         if not player_info_page.find('table', templates.player_info_transfer_table):
             return []
-        all_transfers = player_info_page.find('table', templates.player_info_transfer_table).find('tbody').find_all('tr')
+        all_transfers = player_info_page\
+            .find('table', templates.player_info_transfer_table)\
+            .find('tbody')\
+            .find_all('tr')
 
         for row in all_transfers:
             cells = row.find_all('td')
-            date = cells[0].get_text()
+
+            # team_ids = [helpers.get_href_of_element(
+            #     cells[i].find('td', templates.player_info_injuries_table_team_name))[1] for i in range(1, 3)]
+            #
+            # row_teams = []
+            #
+            # for t_url in helpers.convert_ids_to_urls(team_ids):
+            #     row_teams.append(team_info.get_team_info(bot, t_url))
+            #     bot.driver.back()
+
+            date = helpers.swap_day_month_in_date(cells[0].get_text())
             team_from = parse_transfer_team_name(cells[1].get_text())
+            team_from_data = dict(zip(transfer_team_txt, [team_from, 'No country']))
             team_to = parse_transfer_team_name(cells[2].get_text())
+            team_to_data = dict(zip(transfer_team_txt, [team_to, 'No country']))
+            team_info.save_team(team_to_data)
+            team_info.save_team(team_from_data)
             transfer_type = cells[3].get_text()
-            transfers.append(dict(zip(transfer_names, [date, team_from, team_to, transfer_type])))
+            transfers.append(dict(zip(transfer_names, [date, team_from_data, team_to_data, transfer_type])))
 
     except Exception as e:
-        print(e)
+        print("Player transfers error:", e)
         return []
 
     return transfers
 
 
-def get_players_data_team(row_player):
+def get_player_injuries(player_info_page):
+    injuries = []
+    injuries_txt = ['Name', 'DateFrom', 'DateTo']
+    try:
+        if not player_info_page.find('table', templates.player_info_injuries_table):
+            return []
+        all_injuries = player_info_page\
+            .find('table', templates.player_info_injuries_table)\
+            .find('tbody')\
+            .find_all('tr')
+
+        for row in all_injuries:
+            cells = row.find_all('td')
+            date_from = helpers.swap_day_month_in_date(cells[0].get_text())
+            date_to = helpers.swap_day_month_in_date(cells[1].get_text())
+            injury_name = cells[2].get_text()
+            injuries.append(dict(zip(injuries_txt, [injury_name, date_from, date_to])))
+
+    except Exception as e:
+        print(e)
+        return []
+
+    return injuries
+
+
+def get_players_data_team(row_player, is_full_info=False):
     match_players_info_history_txt = ['Country', 'Date']
     player_data_txt = ['Role', 'First_Name', 'Last_Name', 'Birthday', 'Person_Info_History']
 
-    row_players_pih = []
-    row_players_list = list(row_player.values())
-    row_players_pih.append(dict(zip(match_players_info_history_txt,
-                                    [row_players_list[i] for i in [3, 2]])))
+    row_players_add_info = [dict(zip(match_players_info_history_txt,
+                                     [row_player['Country'], row_player['Birthday']]))]
 
-    return dict(zip(player_data_txt, ['Player'] + [row_players_list[i] for i in [0, 1, 2]] + row_players_pih))
+    if is_full_info:
+        player_data_txt += ['Injury', 'Movement']
+        row_players_add_info += [row_player['Injury'], row_player['Movement']]
+
+    return dict(zip(player_data_txt, ['Player'] + [row_player['First_Name'], row_player['Last_Name'],
+                                                   row_player['Birthday']] + row_players_add_info))
 
 
-def save_players_teams(players_teams, match_teams, b_date):
-    players_team_file_names = ['persons_Players_' + '__'.join(list(match_teams[i].values()) + [b_date]) for i in range(2)]
+def save_players_teams(players_teams, match_teams, b_date, folder_name):
+    players_team_file_names = ['persons_Players_' + '__'.join(list(match_teams[i].values()) +
+                                                              [b_date]) for i in range(2)]
     for i in range(len(players_team_file_names)):
-        storage.save_data(players_teams[i], players_team_file_names[i], templates.persons_folder)
+        storage.save_data(players_teams[i], players_team_file_names[i], folder_name)

@@ -28,7 +28,10 @@ def parse_team_name(score: str) -> str:
 
 
 def parse_tournament_date(tournament_info_page) -> tuple:
-    date = tournament_info_page.find('span', templates.tournament_info_date).get_text().split('/')
+    date = tournament_info_page\
+        .find('span', templates.tournament_info_date)\
+        .get_text()\
+        .split('/')
     return date[0], date[1]
 
 
@@ -37,9 +40,11 @@ def update_bad_parse_date(date: str, years: tuple) -> str:
     l_time = list(map(lambda x: int(x), reg.findall(date)))
     l_time_str = list(reg.findall(date))
     if l_time[1] > 7:
-        return '-'.join([years[0], l_time_str[1], l_time_str[0]]) + 'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
+        return '-'.join([years[0], l_time_str[1], l_time_str[0]]) +\
+               'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
 
-    return '-'.join([years[1], l_time_str[1], l_time_str[0]]) + 'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
+    return '-'.join([years[1], l_time_str[1], l_time_str[0]]) +\
+           'T{0}:{1}:00.000'.format(l_time_str[2], l_time_str[3])
 
 
 def update_bad_parse_date_to_site_format(date: str, years: tuple) -> str:
@@ -61,7 +66,9 @@ def get_tournament_matches(bot, tournament_info_page, debug=0):
     tournament_names = ['Date', 'Home_Team', 'First_Team', 'Second_Team', 'Score']
     try:
         transfer_block = tournament_info_page.find('div', templates.tournament_info)
-        all_transfers = transfer_block.find('tbody').find_all('tr')
+        all_transfers = transfer_block\
+            .find('tbody')\
+            .find_all('tr')
         years = parse_tournament_date(tournament_info_page)
 
         for row in all_transfers:

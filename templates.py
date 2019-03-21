@@ -39,7 +39,8 @@ player_info_country = {'class': 'player-country'}
 player_info_birthdate = {'class': 'player-birthdate'}
 player_info_type_name = {'class': 'player-type-name'}
 player_info_transfer_table = {'class': 'transfer-table'}
-
+player_info_injuries_table = {'class': 'injury-history-table'}
+player_info_injuries_table_team_name = {'class': 'team-name'}
 
 team_info_country_name = {'class', 'tournament'}
 
@@ -52,6 +53,7 @@ match_folder = 'matches'
 match_event_folder = 'match_events'
 teams_folder = 'teams'
 persons_folder = 'persons'
+full_info_persons_folder = 'full_info_persons'
 match_players_folder = 'match_players'
 player_team_movement_folder = 'player_team_movement'
 match_referee_folder = 'match_referee'

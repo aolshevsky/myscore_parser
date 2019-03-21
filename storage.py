@@ -52,8 +52,12 @@ def get_all_project_names(data_dir=templates.base_dir):
 def concat_project_files(project_name: str, file_names: list):
     data = []
     for f_name in file_names:
-        if project_name in ['match_players', 'persons']:
-            data += load_data_from_json(f_name, project_name)
+        if project_name not in ['match_events', 'teams']:
+            if f_name.startswith('persons_Referee'):
+                data.append(load_data_from_json(f_name, project_name))
+            else:
+                data += load_data_from_json(f_name, project_name)
+
         else:
             data.append(load_data_from_json(f_name, project_name))
     save_data(data, '_'.join(['all', project_name]), templates.base_db_dir)

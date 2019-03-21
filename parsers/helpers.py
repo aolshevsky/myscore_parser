@@ -32,6 +32,12 @@ def end_parse_page(bot):
     bot.driver.switch_to.window(bot.get_current_window_handel())
 
 
+def swap_day_month_in_date(date: str):
+    reg = re.compile(r'[0-9]+')
+    b_time = list(reg.findall(date))
+    return '{b_time[1]}.{b_time[0]}.{b_time[2]}'.format(b_time=b_time)
+
+
 def go_to_a_new_page(f):
     def wrapper(*args, **kwargs):
         start_parse_page(args[0])
@@ -39,6 +45,3 @@ def go_to_a_new_page(f):
         end_parse_page(args[0])
         return res
     return wrapper
-
-
-
